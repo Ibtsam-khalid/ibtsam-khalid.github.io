@@ -1,229 +1,330 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Muhammad Ibtsam Khalid | Diagnostic Radiographer</title>
-<meta name="description" content="HCPC registered Diagnostic Radiographer with experience in MRI, CT, general and trauma radiography. MSc Healthcare Management (Distinction), University of Kent.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.unsplash.com">
+<meta name="description" content="HCPC registered Diagnostic Radiographer in London, working in MRI with a background in CT and trauma imaging. MSc Healthcare Management (Distinction), University of Kent.">
+<meta name="theme-color" content="#eef1f6">
 <script>
-  // show the opening sequence only for visitors who allow motion; fall back if scripts never arrive
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.documentElement.classList.add('anim');
-    setTimeout(() => { if (!window.__intro) document.documentElement.classList.remove('anim'); }, 4000);
+    setTimeout(() => { if (!window.__intro) document.documentElement.classList.remove('anim'); }, 3500);
   }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..700&family=Geist:wght@300..600&display=swap" rel="stylesheet">
 <style>
+/* ---------- tokens ---------- */
 :root{
-  --graphite:#121518;
-  --bone:#ebe8e1;
-  --stone:#f1efea;
-  --ink:#16191c;
-  --mist:#8d969e;
-  --soft:#5d646b;
-  --hair:rgba(235,232,225,.14);
-  --hair-dark:rgba(22,25,28,.12);
-  --steel:#a9c1cf;
-  --serif:"Instrument Serif",Georgia,serif;
-  --sans:"Manrope",system-ui,sans-serif;
-  --ease:cubic-bezier(.16,1,.3,1);
+  --midnight:#0c1424; --midnight-2:#111c30; --porcelain:#eef1f4; --ink:#0c1424;
+  --champagne:#a9c4f5; --ice:#e8eef2;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --sans:"Geist",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --gutter:clamp(20px,4vw,64px);
 }
+[data-theme="dark"]{--bg:#0c1424;--fg:#e8eef2;--muted:#8a9aae;--body:#b9c4d1;--line:rgba(232,238,242,.12);--accent:#a9c4f5}
+section[data-theme]{color:var(--fg)}
+[data-theme="light"]{--bg:#eef1f6;--fg:#101828;--muted:#5b6577;--body:#344054;--line:rgba(16,24,40,.1);--accent:#2f5bd3}
+
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-font-smoothing:antialiased}
-html.lenis,html.lenis body{height:auto}
-.lenis.lenis-smooth{scroll-behavior:auto!important}
-body{font-family:var(--sans);font-size:16px;line-height:1.65;color:var(--ink);background:var(--stone);overflow-x:hidden}
+html{-webkit-font-smoothing:antialiased;background:var(--bg);scroll-behavior:smooth}
+body{font-family:var(--sans);font-size:18px;font-weight:400;line-height:1.7;color:var(--fg);background:var(--bg);overflow-x:clip;transition:background-color .8s var(--ease),color .8s var(--ease)}
+main{position:relative;z-index:2}
 img{display:block;max-width:100%}
 a{color:inherit}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--steel);outline-offset:4px}
-.wrap{width:min(1280px,100% - 64px);margin:0 auto}
-.u{color:var(--soft)}
-
-.grain{position:relative}
-.grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;mix-blend-mode:overlay;z-index:1;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+::selection{background:var(--accent);color:var(--bg)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.wrap{width:calc(100% - var(--gutter) * 2);max-width:1360px;margin:0 auto}
+.display{font-family:var(--display);font-optical-sizing:auto}
 
 /* ---------- loader ---------- */
-.loader{position:fixed;inset:0;z-index:50;background:var(--graphite);color:var(--bone);display:none;align-items:flex-end;justify-content:space-between;padding:0 32px 32px}
+.loader{position:fixed;inset:0;z-index:70;background:#eef1f6;color:#101828;display:none;align-items:flex-end;justify-content:space-between;padding:0 var(--gutter) 40px}
 .anim .loader{display:flex}
-.loader .count{font-family:var(--serif);font-size:clamp(80px,14vw,200px);line-height:.8;letter-spacing:-.03em}
-.loader .lbl{font-size:14px;color:var(--mist);text-align:right}
-.loader .bar{position:absolute;left:0;top:0;height:2px;width:100%;background:var(--steel);transform-origin:left;transform:scaleX(0)}
+.loader .count{font-family:var(--display);font-weight:200;font-stretch:75%;font-size:clamp(90px,16vw,230px);line-height:.8;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.loader .lbl{font-size:14px;color:#5b6577;text-align:right}
+.loader .bar{position:absolute;left:0;top:0;height:1px;width:100%;background:#2f5bd3;transform-origin:left;transform:scaleX(0)}
+
+/* ---------- cursor (mouse and trackpad only) ---------- */
+.cursor{position:fixed;left:0;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;border:1px solid var(--accent);pointer-events:none;z-index:80;opacity:0;transform:scale(.25);transition:transform .45s var(--ease),opacity .3s,background-color .45s,border-color .8s;will-change:transform}
+.cursor-pos{position:fixed;left:0;top:0;pointer-events:none;z-index:80;will-change:transform}
+.cursor.on{opacity:1}
+.cursor.big{transform:scale(1);background:color-mix(in srgb,var(--accent) 14%,transparent)}
 
 /* ---------- nav ---------- */
-.nav{position:fixed;top:0;left:0;right:0;z-index:20;color:var(--bone);mix-blend-mode:difference;transition:transform .7s var(--ease)}
-.nav.hide{transform:translateY(-100%)}
-.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:76px}
-.nav .mark{font-family:var(--serif);font-size:24px;text-decoration:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:transform .7s var(--ease),color .8s var(--ease)}
+.nav.hide{transform:translateY(-110%)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:84px}
+.nav .mark{font-family:var(--display);font-size:20px;font-weight:500;font-stretch:85%;letter-spacing:-.01em;text-decoration:none}
 .nav ul{display:flex;gap:34px;list-style:none;font-size:14px}
-.nav ul a{text-decoration:none;opacity:.8;position:relative}
-.nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .6s var(--ease)}
-.nav ul a:hover{opacity:1}
-.nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav ul a{text-decoration:none}
+.nav:not(.on-hero){background:color-mix(in srgb,var(--bg) 90%,transparent);transition:transform .7s var(--ease),color .8s var(--ease),background-color .8s var(--ease)}
+.u-line{background:linear-gradient(currentColor,currentColor) 100% 100%/0 1px no-repeat;transition:background-size .6s var(--ease);padding-bottom:2px}
+.u-line:hover{background-position:0 100%;background-size:100% 1px}
 
 /* ---------- hero ---------- */
-.hero{min-height:100svh;background:var(--graphite);color:var(--bone);overflow:hidden;display:flex;align-items:flex-end}
-.hero .bg{position:absolute;inset:0;overflow:hidden}
-.hero .bg img{width:100%;height:115%;object-fit:cover;filter:grayscale(1) contrast(1.1) brightness(.42)}
-.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,21,24,.55) 0%,rgba(18,21,24,.1) 35%,rgba(18,21,24,.93) 90%)}
-.hero .wrap{position:relative;z-index:2;padding:0 0 56px}
-.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(64px,12.4vw,190px);line-height:.88;letter-spacing:-.025em}
-.hero h1 .line{display:block;overflow:hidden;padding-bottom:.07em}
-.hero h1 .ch{display:inline-block;will-change:transform}
-.hero .meta{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;margin-top:48px;padding-top:24px;border-top:1px solid var(--hair);font-size:14px}
-.hero .meta span{display:block;color:var(--mist);margin-bottom:4px}
-.hero .meta .lead{font-size:17px;line-height:1.5;max-width:26em}
+.hero{position:relative;min-height:100svh;color:var(--fg);overflow:hidden;display:flex;align-items:flex-end}
+.hero .bg{position:absolute;inset:0;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 74%,transparent 92%);mask-image:linear-gradient(180deg,#000 0%,#000 74%,transparent 92%)}
+.hero .bg img{width:100%;height:115%;object-fit:cover;filter:grayscale(1) invert(1) contrast(.9) brightness(1.06);opacity:.3;will-change:transform}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(238,241,246,.55) 0%,rgba(238,241,246,.15) 40%,rgba(238,241,246,.85) 88%),radial-gradient(60% 50% at 20% 70%,rgba(169,196,245,.35),transparent 70%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:56px}
+.hero h1{font-family:var(--display);font-weight:250;font-stretch:78%;font-size:clamp(68px,13.6vw,214px);line-height:.86;letter-spacing:-.045em}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ch{display:inline-block;will-change:transform;font-variation-settings:"wght" var(--w,250)}
+.hero .meta{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-top:52px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--body)}
+.hero .meta span{display:block;color:var(--accent);margin-bottom:4px}
+.hero .meta .lead{font-size:17px;line-height:1.5;max-width:26em;color:var(--fg)}
 
-/* ---------- statement ---------- */
-.statement{background:var(--graphite);color:var(--bone);padding:180px 0 150px}
-.statement p{font-family:var(--serif);font-size:clamp(34px,4.6vw,68px);line-height:1.12;letter-spacing:-.012em;max-width:17em;position:relative;z-index:2}
-
-/* ---------- figures ---------- */
-.figures{background:var(--graphite);color:var(--bone);padding-bottom:150px}
-.figures .wrap{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);position:relative;z-index:2}
-.figures .wrap>div{padding:34px 28px 0 0}
-.figures b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(44px,5vw,76px);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.figures .wrap>div>span{display:block;margin-top:12px;font-size:14px;color:var(--mist);max-width:16em}
-
-
-/* ---------- sections ---------- */
-.sec{padding:150px 0}
-.sec .head{display:grid;grid-template-columns:1fr 2fr;gap:48px;margin-bottom:72px;align-items:end}
-.sec h2{font-family:var(--serif);font-weight:400;font-size:clamp(48px,6vw,96px);line-height:.95;letter-spacing:-.02em}
-.sec .head p{color:var(--soft);max-width:34em;font-size:17px}
-.mask{display:block;overflow:hidden;padding-bottom:.06em}
+/* ---------- section scaffold: pinned title on the left, reading column on the right ---------- */
+.sec{padding:clamp(120px,14vw,200px) 0}
+.split .grid{display:grid;grid-template-columns:minmax(240px,1fr) minmax(0,2fr);gap:clamp(48px,8vw,140px);align-items:start}
+.aside{align-self:stretch}
+.aside .pin{position:sticky;top:120px}
+.sec h2{font-family:var(--display);font-weight:250;font-stretch:78%;font-size:clamp(52px,6.2vw,104px);line-height:.9;letter-spacing:-.04em}
+.aside p{color:var(--muted);max-width:22em;margin-top:26px;font-size:16px;line-height:1.6}
+.aside .meta-line{display:block;margin-top:22px;font-size:13px;color:var(--accent)}
+.mask{display:block;overflow:hidden;padding-bottom:.08em}
 .mask>span{display:block}
+.label-sm{font-size:13px;color:var(--muted)}
+.body{min-width:0}
+.body p,.body li{max-width:62ch}
 
-/* equipment ledger */
-.row{display:grid;grid-template-columns:1.2fr .8fr 1.6fr 170px;gap:32px;align-items:baseline;padding:30px 0;position:relative;cursor:default}
-.row::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--hair-dark);transform-origin:left}
-.ledger{border-bottom:1px solid var(--hair-dark)}
-.row h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.2vw,46px);line-height:1;letter-spacing:-.01em;transition:padding .7s var(--ease)}
-.row .model{font-weight:600}
-.row p{color:var(--soft);font-size:15px}
-.row .tag{font-size:13px;color:var(--soft);white-space:nowrap}
-.row .tag.on{color:var(--ink)}
-.row .tag.on::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#2f8f6e;margin-right:8px;vertical-align:1px;animation:beat 2.4s ease-in-out infinite}
-@keyframes beat{0%,100%{box-shadow:0 0 0 0 rgba(47,143,110,.35)}50%{box-shadow:0 0 0 6px rgba(47,143,110,0)}}
-@media (hover:hover){.row:hover h3{padding-left:16px}}
+/* rules that draw in (transform only) */
+.has-rule{position:relative}
+.rule{position:absolute;left:0;right:0;top:0;height:1px;background:var(--line);transform-origin:left}
 
-/* experience */
-.dark{background:var(--graphite);color:var(--bone)}
-.dark .head p{color:var(--mist)}
-.dark .wrap{position:relative;z-index:2}
-.role{display:grid;grid-template-columns:220px 1fr 1.3fr;gap:40px;padding:40px 0;border-top:1px solid var(--hair)}
-.roles{border-bottom:1px solid var(--hair)}
-.role .when{color:var(--mist);font-size:14px;padding-top:6px}
-.role h3{font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.1}
-.role .org{color:var(--steel);font-size:15px;margin-top:8px}
-.role ul{list-style:none;color:#c5c2bb;font-size:15px}
-.role li{padding-left:18px;position:relative;margin-bottom:8px}
-.role li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:1px;background:var(--mist)}
-.pill{display:inline-block;font-family:var(--sans);font-size:12px;color:var(--steel);border:1px solid rgba(169,193,207,.4);border-radius:20px;padding:1px 10px;margin-left:10px;vertical-align:6px}
-
-/* scope */
-.scope{display:grid;grid-template-columns:repeat(3,1fr);gap:56px}
-.scope h3{font-size:13px;font-weight:600;color:var(--soft);padding-bottom:16px;border-bottom:1px solid var(--ink);margin-bottom:6px}
-.scope ul{list-style:none}
-.scope li{font-family:var(--serif);font-size:26px;line-height:1.25;padding:12px 0;border-bottom:1px solid var(--hair-dark)}
-
-
-/* education */
-.edu{display:grid;grid-template-columns:1fr 1fr;gap:72px}
-.edu h3{font-family:var(--serif);font-weight:400;font-size:38px;line-height:1.05}
-.edu .sub{color:var(--soft);font-size:14px;margin:12px 0 18px}
-.edu p{color:#3d4349}
-.edu a,.paper a,.note a{font-weight:600;text-underline-offset:4px;color:var(--ink)}
-.paper{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;margin-top:96px;padding-top:40px;border-top:1px solid var(--hair-dark)}
-.paper small{display:block;color:var(--soft);font-size:14px;margin-bottom:10px}
-.paper h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.6vw,54px);line-height:1.02;max-width:16em}
-.paper a{white-space:nowrap}
-
-/* CPD accordion */
-.cpd details{border-top:1px solid var(--hair-dark)}
-.cpd details:last-of-type{border-bottom:1px solid var(--hair-dark)}
-.cpd summary{list-style:none;cursor:pointer;display:flex;align-items:center;padding:30px 0;font-family:var(--serif);font-size:clamp(28px,3vw,42px);line-height:1;transition:padding .6s var(--ease)}
-.cpd summary:hover{padding-left:12px}
-.cpd summary::-webkit-details-marker{display:none}
-.cpd summary .count{font-family:var(--sans);font-size:14px;color:var(--soft);margin-left:auto;margin-right:28px}
-.cpd summary .pm{width:22px;height:22px;position:relative;flex:none}
-.cpd summary .pm::before,.cpd summary .pm::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:var(--ink);transition:transform .6s var(--ease)}
-.cpd summary .pm::after{transform:rotate(90deg)}
-.cpd details[open] .pm::after{transform:rotate(0)}
-.cpd ul{list-style:none;padding:0 0 30px}
-.cpd li{display:grid;grid-template-columns:1.6fr 1fr;gap:24px;padding:14px 0;border-top:1px solid var(--hair-dark)}
-.cpd li span{color:var(--soft);font-size:14px}
-.regs{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--hair-dark);margin-top:110px}
-.regs div{padding:24px 24px 0 0;font-size:15px}
-.regs div span{display:block;font-size:13px;color:var(--soft);margin-bottom:4px}
-.note{margin-top:48px;color:var(--soft)}
-
-/* contact */
-.contact{background:var(--graphite);color:var(--bone);padding:170px 0 48px}
-.contact .wrap{position:relative;z-index:2}
-.contact .kicker{color:var(--mist);font-size:15px;max-width:30em;margin-bottom:28px}
-.contact a.mail{display:inline-block;font-family:var(--serif);font-size:clamp(40px,7.4vw,118px);line-height:1;letter-spacing:-.02em;text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .9s var(--ease);padding-bottom:6px}
-.contact a.mail:hover{background-size:100% 1px}
-.contact .foot{display:flex;justify-content:space-between;gap:24px;margin-top:140px;padding-top:24px;border-top:1px solid var(--hair);font-size:14px;color:var(--mist)}
-.contact .foot a{text-decoration:none;color:var(--bone)}
-.contact .foot button{background:none;border:none;color:var(--bone);font:inherit;cursor:pointer}
-
-
-/* ---------- one motion language: the scan reveal ---------- */
-.scan-line{position:absolute;left:0;right:0;top:calc(var(--p,0) * 1% - 1px);height:1px;background:#4b7c93;box-shadow:0 0 14px 2px rgba(75,124,147,.45);opacity:0;pointer-events:none;z-index:3}
-.dark .scan-line,.figures .scan-line,.contact .scan-line{background:var(--steel);box-shadow:0 0 14px 2px rgba(169,193,207,.5)}
-.scanning{clip-path:inset(0 0 calc(100% - var(--p,0) * 1%) 0)}
-
-/* equipment rows fill on hover */
-.row{isolation:isolate}
-.row::after{content:"";position:absolute;inset:0 -24px;background:var(--graphite);transform:scaleY(0);transform-origin:bottom;transition:transform .7s var(--ease);z-index:-1}
-.row h3,.row .model,.row p,.row .tag{transition:color .5s var(--ease),padding .7s var(--ease)}
+/* focus: hovering one item dims the others */
 @media (hover:hover){
-  .row:hover::after{transform:scaleY(1);transform-origin:top}
-  .row:hover h3,.row:hover .model,.row:hover .tag.on{color:var(--bone)}
-  .row:hover p,.row:hover .tag{color:var(--mist)}
+  .focus > *{transition:opacity .5s var(--ease)}
+  .focus:hover > *{opacity:.38}
+  .focus:hover > *:hover{opacity:1}
 }
 
-/* where am I: section indicator */
-.where{position:fixed;left:32px;bottom:28px;z-index:20;display:flex;align-items:center;gap:14px;color:var(--bone);mix-blend-mode:difference;font-size:13px;pointer-events:none;opacity:0;transition:opacity .8s var(--ease)}
-.where.on{opacity:1}
-.where .track{width:72px;height:1px;background:rgba(235,232,225,.3);overflow:hidden}
-.where .track i{display:block;height:100%;background:currentColor;transform-origin:left;transform:scaleX(0)}
-.where .label{display:block;overflow:hidden;height:1.4em}
-.where .label span{display:block}
-@media (max-width:1000px){.where{display:none}}
+/* ---------- statement ---------- */
+.statement{padding:clamp(140px,17vw,230px) 0 clamp(80px,10vw,140px)}
+.statement p{font-family:var(--display);font-weight:300;font-stretch:88%;font-size:clamp(32px,4.4vw,66px);line-height:1.1;letter-spacing:-.025em;max-width:18em}
+.statement .w{display:inline-block}
+
+/* ---------- figures ---------- */
+.figures{padding-bottom:clamp(110px,13vw,190px)}
+.figures .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.figures .wrap>div{padding:36px 28px 0 0}
+.figures b{display:block;font-family:var(--display);font-weight:200;font-stretch:75%;font-size:clamp(54px,6.4vw,100px);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:var(--accent)}
+.figures .wrap>div>span{display:block;margin-top:14px;font-size:14px;color:var(--muted);max-width:16em}
+
+/* ---------- shared item ---------- */
+.item{padding:36px 0 40px}
+.item-top{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+.item h3{font-family:var(--display);font-weight:300;font-stretch:80%;font-size:clamp(30px,3vw,46px);line-height:1.02;letter-spacing:-.03em;transition:font-variation-settings .6s var(--ease)}
+@media (hover:hover){.item:hover h3{font-variation-settings:"wght" 460}}
+.sub{display:block;margin-top:10px;font-size:15px;font-weight:500;color:var(--accent)}
+.item p{margin-top:14px;color:var(--body);font-size:17px}
+.tag{font-size:13px;color:var(--muted);white-space:nowrap}
+.tag.on{color:var(--fg)}
+.tag.on::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#3fae86;margin-right:8px;vertical-align:1px;box-shadow:0 0 0 4px rgba(63,174,134,.18)}
+.end-rule{height:1px}
+
+/* ---------- experience ---------- */
+.role .when{font-size:13px;color:var(--muted);margin-bottom:12px;display:block}
+.role ul{list-style:none;margin-top:18px;color:var(--body);font-size:17px}
+.role li{padding-left:22px;position:relative;margin-bottom:10px}
+.role li::before{content:"";position:absolute;left:0;top:.85em;width:10px;height:1px;background:var(--accent)}
+.pill{display:inline-block;font-family:var(--sans);font-size:12px;font-weight:400;letter-spacing:0;color:var(--accent);border:1px solid var(--line);border-radius:20px;padding:1px 10px;margin-left:10px;vertical-align:8px}
+
+/* ---------- scope ---------- */
+.scope{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.scope h3{font-size:13px;font-weight:500;color:var(--muted);padding-bottom:14px;border-bottom:1px solid var(--fg);margin-bottom:4px}
+.scope ul{list-style:none}
+.scope li{font-family:var(--display);font-weight:300;font-stretch:85%;font-size:clamp(21px,1.7vw,25px);letter-spacing:-.015em;line-height:1.25;padding:12px 0;border-bottom:1px solid var(--line)}
+
+/* ---------- writing ---------- */
+.note-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding:30px 0;text-decoration:none}
+.note-row .kind{display:block;font-size:13px;color:var(--muted);margin-bottom:8px}
+.note-row h3{font-family:var(--display);font-weight:300;font-stretch:82%;font-size:clamp(26px,2.4vw,36px);line-height:1.1;letter-spacing:-.025em}
+.note-row .go{font-size:14px;color:var(--muted);white-space:nowrap;transition:transform .6s var(--ease),color .4s}
+@media (hover:hover){.note-row:hover .go{transform:translateX(-10px);color:var(--fg)}}
+
+/* ---------- education ---------- */
+.actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;align-items:center;padding:13px 24px;border:1px solid var(--line);border-radius:40px;font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap;position:relative;overflow:hidden;isolation:isolate;transition:color .5s var(--ease),border-color .5s}
+.btn::before{content:"";position:absolute;inset:0;background:var(--fg);border-radius:inherit;transform:translateY(101%);transition:transform .5s var(--ease);z-index:-1}
+@media (hover:hover){.btn:hover{color:var(--bg);border-color:var(--fg)}.btn:hover::before{transform:translateY(0)}}
+.paper h3{font-weight:250;font-stretch:78%;font-size:clamp(34px,3.6vw,56px);line-height:.98}
+
+/* ---------- CPD ---------- */
+.cpd details{position:relative}
+.cpd summary{list-style:none;cursor:pointer;display:flex;align-items:center;padding:30px 0;font-family:var(--display);font-weight:300;font-stretch:82%;font-size:clamp(26px,2.6vw,40px);letter-spacing:-.03em;line-height:1;transition:padding .6s var(--ease)}
+@media (hover:hover){.cpd summary:hover{padding-left:12px}}
+.cpd summary::-webkit-details-marker{display:none}
+.cpd summary .count{font-family:var(--sans);font-size:14px;letter-spacing:0;color:var(--muted);margin-left:auto;margin-right:24px;white-space:nowrap;padding-left:14px}
+.cpd summary .pm{width:18px;height:18px;position:relative;flex:none}
+.cpd summary .pm::before,.cpd summary .pm::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--fg);transition:transform .5s var(--ease)}
+.cpd summary .pm::after{transform:rotate(90deg)}
+.cpd details[open] .pm::after{transform:rotate(0)}
+.cpd .panel{overflow:hidden}
+.cpd ul{list-style:none;padding:0 0 30px}
+.cpd li{padding:16px 0;border-top:1px solid var(--line);max-width:none}
+.cpd li b{display:block;font-weight:400;font-size:17px}
+.cpd li span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+.regs{display:grid;grid-template-columns:repeat(2,1fr);margin-top:clamp(70px,8vw,110px)}
+.regs div{padding:24px 24px 4px 0;font-size:16px}
+.regs div span{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+.request{margin-top:44px;color:var(--muted)}
+.request a{color:var(--fg);font-weight:500;text-decoration:none}
+
+/* ---------- contact: revealed beneath the page ---------- */
+.contact{position:relative;color:var(--fg);padding:clamp(60px,8vw,120px) 0 44px;z-index:2}
+.curtain .contact{position:fixed;left:0;right:0;bottom:0}
+.contact .kicker{color:var(--muted);font-size:16px;max-width:30em;margin-bottom:30px}
+.contact a.mail{display:inline-block;font-family:var(--display);font-weight:250;font-stretch:78%;font-size:clamp(40px,8vw,132px);line-height:1;letter-spacing:-.045em;text-decoration:none;transition:font-variation-settings .8s var(--ease),color .5s}
+@media (hover:hover){.contact a.mail:hover{font-variation-settings:"wght" 450;color:var(--accent)}}
+.contact .links{display:flex;gap:14px;margin-top:44px;flex-wrap:wrap}
+.contact .btn{border-color:var(--line)}
+.contact .foot{display:flex;justify-content:space-between;gap:24px;margin-top:clamp(90px,10vw,150px);padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.contact .foot button{background:none;border:none;color:var(--fg);font:inherit;cursor:pointer}
+
+
+/* ---------- line drawings in the pinned column ---------- */
+.draw{display:block;width:min(240px,72%);height:auto;margin-top:56px;overflow:visible}
+.draw *{fill:none;stroke:var(--accent);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;transition:stroke .8s var(--ease),fill .8s var(--ease)}
+.draw .soft{stroke-opacity:.45}
+.draw .faint{stroke-opacity:.18}
+.draw .dash{stroke-dasharray:2 4;stroke-opacity:.6}
+.draw .core,.draw .pulse,.draw .kdot{fill:var(--accent);stroke:none}
+.draw .kdot{fill-opacity:.35}
+.draw .lbl{fill:var(--muted);stroke:none;font:500 9px/1 var(--sans);letter-spacing:.04em}
+.draw .idle{opacity:0;transition:opacity 1.2s var(--ease) 1.8s}
+.draw.drawn .idle{opacity:1}
+.anim .draw .ln path,.anim .draw .ln circle,.anim .draw .ln ellipse{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.2s cubic-bezier(.65,0,.35,1) calc(var(--i) * .2s),stroke .8s}
+.anim .draw .ln .dash{stroke-dasharray:1}
+.anim .draw.drawn .ln path,.anim .draw.drawn .ln circle,.anim .draw.drawn .ln ellipse{stroke-dashoffset:0}
+.anim .draw.drawn .ln .dash{stroke-dasharray:.012 .02;transition-delay:2.6s}
+@media (prefers-reduced-motion:no-preference){
+  .drawn .spin{animation:spin 40s linear infinite;transform-origin:110px 110px}
+  .drawn .spin-rev{animation:spin 26s linear infinite reverse;transform-origin:110px 110px}
+  .drawn .turn{animation:spin 80s linear infinite;transform-origin:110px 110px}
+  .drawn .slide{animation:slide 6s ease-in-out infinite}
+  .drawn .breathe{animation:breathe 5s ease-in-out infinite;transform-origin:110px 110px}
+  .drawn .pulse{animation:pulse 3.6s ease-in-out infinite;animation-delay:calc(var(--k) * .22s);transform-box:fill-box;transform-origin:center}
+  .drawn .core{animation:pulse 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+  .drawn .kgrid{animation:twinkle 4s ease-in-out infinite}
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes slide{0%,100%{transform:translateY(-34px)}50%{transform:translateY(30px)}}
+@keyframes breathe{0%,100%{transform:scale(.84)}50%{transform:scale(1.1)}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.55}50%{transform:scale(1.8);opacity:1}}
+@keyframes twinkle{0%,100%{opacity:.6}50%{opacity:1}}
+@media (max-width:1000px){.draw{width:150px;margin-top:36px}}
+
+
+/* ---------- ambient glows (the light behind the glass) ---------- */
+body{background:#eef1f6}
+.glows{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.glows i{position:absolute;border-radius:50%;will-change:transform}
+.glows .g1{width:70vmax;height:70vmax;left:-22vmax;top:5vh;background:radial-gradient(closest-side,rgba(169,196,245,.75),rgba(169,196,245,0))}
+.glows .g2{width:75vmax;height:75vmax;right:-28vmax;top:28vh;background:radial-gradient(closest-side,rgba(214,199,242,.7),rgba(214,199,242,0))}
+.glows .g3{width:60vmax;height:60vmax;left:22vw;bottom:-28vmax;background:radial-gradient(closest-side,rgba(184,227,234,.6),rgba(184,227,234,0))}
+
+/* ---------- glass ---------- */
+.glass{position:relative;border-radius:22px;background:linear-gradient(140deg,rgba(255,255,255,.72),rgba(255,255,255,.42) 55%,rgba(255,255,255,.58));
+  border:1px solid rgba(255,255,255,.85);box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 1px 2px rgba(16,24,40,.04),0 24px 50px -26px rgba(16,24,40,.22);
+  -webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);overflow:hidden;isolation:isolate}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;
+  background:radial-gradient(420px circle at var(--mx,25%) var(--my,0%),rgba(255,255,255,.75),transparent 60%);opacity:.6;transition:opacity .5s var(--ease)}
+.glass::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;padding:1px;
+  background:linear-gradient(140deg,rgba(255,255,255,1),rgba(255,255,255,0) 35%,rgba(255,255,255,0) 70%,rgba(47,91,211,.22));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+@media (hover:hover){
+  .glass{transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+  .glass:hover{transform:translateY(-4px);box-shadow:inset 0 1px 0 #fff,0 1px 2px rgba(16,24,40,.05),0 34px 60px -28px rgba(16,24,40,.3)}
+  .glass:hover::before{opacity:1}
+}
+.cards{display:grid;gap:18px}
+.cards.two{grid-template-columns:1fr 1fr}
+.cards .item{padding:32px 32px 34px}
+.cards .item p{font-size:16px}
+.cards .item h3{font-size:clamp(28px,2.4vw,38px)}
+.contact-card{padding:clamp(40px,6vw,88px)}
+
+
+/* floating glass menu */
+.nav{color:var(--fg)}
+.nav .wrap{height:62px;margin-top:14px;padding:0 26px;border-radius:999px;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.9);
+  box-shadow:inset 0 1px 0 #fff,0 18px 40px -22px rgba(16,24,40,.25);-webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);max-width:1180px;transition:background-color .6s var(--ease),border-color .6s var(--ease),box-shadow .6s}
+.nav:not(.on-hero){background:none}
+
+@media (max-width:1000px){.cards.two{grid-template-columns:1fr}}
+@media (max-width:640px){.cards .item{padding:26px 22px}.nav .wrap{margin-top:10px;width:calc(100% - 20px);padding:0 20px}}
+
+
+/* ---------- hero linework ---------- */
+.hero-art{position:absolute;inset:0;width:100%;height:100%}
+.hero-art *{fill:none;stroke:var(--accent);stroke-width:1;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.hero-art .ln > *,.hero-art .ln path{stroke-opacity:.42}
+.hero-art .soft{stroke-opacity:.26!important}
+.hero-art .faint{stroke-opacity:.14!important}
+.hero-art .core{fill:var(--accent);stroke:none;opacity:.6}
+.hero-art .lbl{fill:var(--muted);stroke:none;font:500 12px var(--sans);letter-spacing:.02em;opacity:.85}
+.hero-art .idle{opacity:0;transition:opacity 1.4s var(--ease) .6s}
+.hero-art.drawn .idle{opacity:.6}
+.anim .hero-art .ln path,.anim .hero-art .ln circle{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s cubic-bezier(.65,0,.35,1) calc(var(--i) * .16s)}
+.anim .hero-art.drawn .ln path,.anim .hero-art.drawn .ln circle{stroke-dashoffset:0}
+@media (prefers-reduced-motion:no-preference){
+  .hero-art.drawn .spin{animation:spin 60s linear infinite}
+  .hero-art.drawn .spin-rev{animation:spin 45s linear infinite reverse}
+  .hero-art.drawn .turn{animation:spin 90s linear infinite}
+  .hero-art.drawn .slide{animation:slide-lg 8s ease-in-out infinite}
+}
+@keyframes slide-lg{0%,100%{transform:translateY(-70px)}50%{transform:translateY(70px)}}
+.hero-art .dash{stroke-dasharray:3 6}
+.anim .hero-art .ln .dash{stroke-dasharray:1}
+.anim .hero-art.drawn .ln .dash{stroke-dasharray:.02 .03;transition-delay:2.4s}
+.hero-art .labels{opacity:0}
+.hero-art.drawn .labels{opacity:1}
+.hero-art .ecg-run{stroke-width:1.6;stroke-dasharray:70 1400;stroke-dashoffset:70}
+.hero-art .wire{stroke-width:1.6;stroke-dasharray:14 240}
+.hero-art .emit{stroke-opacity:.5}
+@media (prefers-reduced-motion:no-preference){
+  .hero-art.drawn .orbit{animation:spin 14s linear infinite}
+  .hero-art.drawn .sector{animation:sector 4s ease-in-out infinite}
+  .hero-art.drawn .ecg-run{animation:ecg 3.2s linear infinite}
+  .hero-art.drawn .wire{animation:wire 4s linear infinite}
+  .hero-art.drawn .emit{animation:emit 3s ease-out infinite;transform-box:fill-box;transform-origin:center}
+}
+@keyframes sector{0%,100%{transform:rotate(-26deg)}50%{transform:rotate(26deg)}}
+@keyframes ecg{to{stroke-dashoffset:-1400}}
+@keyframes wire{to{stroke-dashoffset:-254}}
+@keyframes emit{0%{transform:scale(.3);opacity:.9}100%{transform:scale(1.4);opacity:0}}
+
+@media (max-width:640px){.hero-art{opacity:.6}.hero-art .core,.hero-art .labels{display:none}.hero .bg{-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 38%,transparent 62%);mask-image:linear-gradient(180deg,#000 0%,#000 38%,transparent 62%)}}
 
 /* ---------- responsive ---------- */
 @media (max-width:1000px){
+  .nav ul{gap:22px}
   .hero .meta{grid-template-columns:1fr 1fr}
-  .figures .wrap{grid-template-columns:1fr 1fr;row-gap:40px}
-  .sec .head,.edu{grid-template-columns:1fr}
-  .row{grid-template-columns:1fr 1fr;row-gap:8px}
-  .row p{grid-column:1/-1}
-  .role{grid-template-columns:1fr;gap:12px}
+  .figures .wrap{grid-template-columns:1fr 1fr;row-gap:44px}
+  .split .grid{grid-template-columns:1fr;gap:56px}
+  .aside .pin{position:static}
   .scope{grid-template-columns:1fr;gap:40px}
-  .regs{grid-template-columns:1fr 1fr}
-  .paper{grid-template-columns:1fr}
+  .cursor{display:none}
 }
 @media (max-width:640px){
-  .wrap{width:calc(100% - 40px)}
   .nav ul{display:none}
   .hero .meta{grid-template-columns:1fr;gap:18px}
-  .statement{padding:110px 0 100px}
-  .sec{padding:100px 0}
-  .figures{padding-bottom:96px}
-  .row{grid-template-columns:1fr;align-items:start;row-gap:10px}
-  .cpd li{grid-template-columns:1fr;gap:2px}
   .regs{grid-template-columns:1fr}
-  .contact a.mail{font-size:8.6vw}
-  .contact .foot {flex-direction:column;align-items:flex-start}
+  .note-row{flex-direction:column;align-items:flex-start;gap:10px}
+  .item p,.role ul{font-size:16px}
+  .contact a.mail{font-size:9.4vw}
+  .contact .foot{flex-direction:column}
 }
 </style>
+
 </head>
 <body>
+<div class="glows" aria-hidden="true"><i class="g1"></i><i class="g2"></i><i class="g3"></i></div>
+<div class="cursor-pos" aria-hidden="true"><div class="cursor"></div></div>
 
 <div class="loader" aria-hidden="true">
   <div class="bar"></div>
@@ -231,44 +332,47 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   <div class="lbl">Muhammad Ibtsam Khalid<br>Diagnostic Radiographer</div>
 </div>
 
-<div class="where" aria-hidden="true"><span class="track"><i></i></span><span class="label"><span>Introduction</span></span></div>
-
-<header class="nav">
+<header class="nav on-hero">
   <div class="wrap">
     <a class="mark" href="#top">M. Ibtsam Khalid</a>
     <ul>
-      <li><a href="#equipment">Equipment</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#cpd">CPD</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a class="u-line" href="#equipment">Equipment</a></li>
+      <li><a class="u-line" href="#experience">Experience</a></li>
+      <li><a class="u-line" href="#education">Education</a></li>
+      <li><a class="u-line" href="#cpd">CPD</a></li>
+      <li><a class="u-line" href="#contact">Contact</a></li>
     </ul>
   </div>
 </header>
 
 <main>
-<section class="hero grain" id="top">
-  <div class="bg"><img src="https://images.unsplash.com/photo-1631563019676-dade0dbdb8fc?auto=format&fit=crop&w=2200&q=80" alt="Black and white MRI brain scan films" fetchpriority="high"></div>
+<section class="hero" id="top" data-theme="light">
+  <div class="bg"><svg class="hero-art" viewBox="0 0 1440 900" preserveAspectRatio="xMaxYMin slice" aria-hidden="true">
+<defs><clipPath id="bore"><circle cx="1085" cy="360" r="158"/></clipPath></defs>
+<g class="ln"><circle pathLength="1" class="" style="--i:1" cx="1085" cy="360" r="250"/><path pathLength="1" class="soft" style="--i:2" d="M1335.0 360.0 L1321.0 360.0 M1334.8 370.9 L1328.8 370.6 M1334.0 381.8 L1328.1 381.3 M1332.9 392.6 L1326.9 391.8 M1331.2 403.4 L1325.3 402.4 M1329.1 414.1 L1323.2 412.8 M1326.5 424.7 L1313.0 421.1 M1323.4 435.2 L1317.7 433.4 M1319.9 445.5 L1314.3 443.5 M1316.0 455.7 L1310.4 453.4 M1311.6 465.7 L1306.1 463.1 M1306.8 475.4 L1301.4 472.7 M1301.5 485.0 L1289.4 478.0 M1295.8 494.3 L1290.8 491.1 M1289.8 503.4 L1284.9 500.0 M1283.3 512.2 L1278.6 508.5 M1276.5 520.7 L1271.9 516.8 M1269.3 528.9 L1264.9 524.8 M1261.8 536.8 L1251.9 526.9 M1253.9 544.3 L1249.8 539.9 M1245.7 551.5 L1241.8 546.9 M1237.2 558.3 L1233.5 553.6 M1228.4 564.8 L1225.0 559.9 M1219.3 570.8 L1216.1 565.8 M1210.0 576.5 L1203.0 564.4 M1200.4 581.8 L1197.7 576.4 M1190.7 586.6 L1188.1 581.1 M1180.7 591.0 L1178.4 585.4 M1170.5 594.9 L1168.5 589.3 M1160.2 598.4 L1158.4 592.7 M1149.7 601.5 L1146.1 588.0 M1139.1 604.1 L1137.8 598.2 M1128.4 606.2 L1127.4 600.3 M1117.6 607.9 L1116.8 601.9 M1106.8 609.0 L1106.3 603.1 M1095.9 609.8 L1095.6 603.8 M1085.0 610.0 L1085.0 596.0 M1074.1 609.8 L1074.4 603.8 M1063.2 609.0 L1063.7 603.1 M1052.4 607.9 L1053.2 601.9 M1041.6 606.2 L1042.6 600.3 M1030.9 604.1 L1032.2 598.2 M1020.3 601.5 L1023.9 588.0 M1009.8 598.4 L1011.6 592.7 M999.5 594.9 L1001.5 589.3 M989.3 591.0 L991.6 585.4 M979.3 586.6 L981.9 581.1 M969.6 581.8 L972.3 576.4 M960.0 576.5 L967.0 564.4 M950.7 570.8 L953.9 565.8 M941.6 564.8 L945.0 559.9 M932.8 558.3 L936.5 553.6 M924.3 551.5 L928.2 546.9 M916.1 544.3 L920.2 539.9 M908.2 536.8 L918.1 526.9 M900.7 528.9 L905.1 524.8 M893.5 520.7 L898.1 516.8 M886.7 512.2 L891.4 508.5 M880.2 503.4 L885.1 500.0 M874.2 494.3 L879.2 491.1 M868.5 485.0 L880.6 478.0 M863.2 475.4 L868.6 472.7 M858.4 465.7 L863.9 463.1 M854.0 455.7 L859.6 453.4 M850.1 445.5 L855.7 443.5 M846.6 435.2 L852.3 433.4 M843.5 424.7 L857.0 421.1 M840.9 414.1 L846.8 412.8 M838.8 403.4 L844.7 402.4 M837.1 392.6 L843.1 391.8 M836.0 381.8 L841.9 381.3 M835.2 370.9 L841.2 370.6 M835.0 360.0 L849.0 360.0 M835.2 349.1 L841.2 349.4 M836.0 338.2 L841.9 338.7 M837.1 327.4 L843.1 328.2 M838.8 316.6 L844.7 317.6 M840.9 305.9 L846.8 307.2 M843.5 295.3 L857.0 298.9 M846.6 284.8 L852.3 286.6 M850.1 274.5 L855.7 276.5 M854.0 264.3 L859.6 266.6 M858.4 254.3 L863.9 256.9 M863.2 244.6 L868.6 247.3 M868.5 235.0 L880.6 242.0 M874.2 225.7 L879.2 228.9 M880.2 216.6 L885.1 220.0 M886.7 207.8 L891.4 211.5 M893.5 199.3 L898.1 203.2 M900.7 191.1 L905.1 195.2 M908.2 183.2 L918.1 193.1 M916.1 175.7 L920.2 180.1 M924.3 168.5 L928.2 173.1 M932.8 161.7 L936.5 166.4 M941.6 155.2 L945.0 160.1 M950.7 149.2 L953.9 154.2 M960.0 143.5 L967.0 155.6 M969.6 138.2 L972.3 143.6 M979.3 133.4 L981.9 138.9 M989.3 129.0 L991.6 134.6 M999.5 125.1 L1001.5 130.7 M1009.8 121.6 L1011.6 127.3 M1020.3 118.5 L1023.9 132.0 M1030.9 115.9 L1032.2 121.8 M1041.6 113.8 L1042.6 119.7 M1052.4 112.1 L1053.2 118.1 M1063.2 111.0 L1063.7 116.9 M1074.1 110.2 L1074.4 116.2 M1085.0 110.0 L1085.0 124.0 M1095.9 110.2 L1095.6 116.2 M1106.8 111.0 L1106.3 116.9 M1117.6 112.1 L1116.8 118.1 M1128.4 113.8 L1127.4 119.7 M1139.1 115.9 L1137.8 121.8 M1149.7 118.5 L1146.1 132.0 M1160.2 121.6 L1158.4 127.3 M1170.5 125.1 L1168.5 130.7 M1180.7 129.0 L1178.4 134.6 M1190.7 133.4 L1188.1 138.9 M1200.4 138.2 L1197.7 143.6 M1210.0 143.5 L1203.0 155.6 M1219.3 149.2 L1216.1 154.2 M1228.4 155.2 L1225.0 160.1 M1237.2 161.7 L1233.5 166.4 M1245.7 168.5 L1241.8 173.1 M1253.9 175.7 L1249.8 180.1 M1261.8 183.2 L1251.9 193.1 M1269.3 191.1 L1264.9 195.2 M1276.5 199.3 L1271.9 203.2 M1283.3 207.8 L1278.6 211.5 M1289.8 216.6 L1284.9 220.0 M1295.8 225.7 L1290.8 228.9 M1301.5 235.0 L1289.4 242.0 M1306.8 244.6 L1301.4 247.3 M1311.6 254.3 L1306.1 256.9 M1316.0 264.3 L1310.4 266.6 M1319.9 274.5 L1314.3 276.5 M1323.4 284.8 L1317.7 286.6 M1326.5 295.3 L1313.0 298.9 M1329.1 305.9 L1323.2 307.2 M1331.2 316.6 L1325.3 317.6 M1332.9 327.4 L1326.9 328.2 M1334.0 338.2 L1328.1 338.7 M1334.8 349.1 L1328.8 349.4"/><circle pathLength="1" class="soft" style="--i:3" cx="1085" cy="360" r="218"/><circle pathLength="1" class="" style="--i:4" cx="1085" cy="360" r="190"/><circle pathLength="1" class="" style="--i:5" cx="1085" cy="360" r="158"/><path pathLength="1" class="soft" style="--i:6" d="M1197.0 360.0 L1233.0 360.0 M1190.2 398.3 L1224.1 410.6 M1170.8 432.0 L1198.4 455.1 M1141.0 457.0 L1159.0 488.2 M1104.4 470.3 L1110.7 505.8 M1065.6 470.3 L1059.3 505.8 M1029.0 457.0 L1011.0 488.2 M999.2 432.0 L971.6 455.1 M979.8 398.3 L945.9 410.6 M973.0 360.0 L937.0 360.0 M979.8 321.7 L945.9 309.4 M999.2 288.0 L971.6 264.9 M1029.0 263.0 L1011.0 231.8 M1065.6 249.7 L1059.3 214.2 M1104.4 249.7 L1110.7 214.2 M1141.0 263.0 L1159.0 231.8 M1170.8 288.0 L1198.4 264.9 M1190.2 321.7 L1224.1 309.4"/><circle pathLength="1" class="soft" style="--i:7" cx="1085" cy="360" r="100"/><path pathLength="1" class="faint" style="--i:8" d="M805 120 V80 H845 M1325 80 H1365 V120 M1365 600 V640 H1325 M845 640 H805 V600"/><g clip-path="url(#bore)"><path pathLength="1" class="faint" style="--i:9" d="M885 450 L1285 390 M885 426 L1285 366 M885 402 L1285 342 M885 378 L1285 318 M885 354 L1285 294 M885 330 L1285 270 M885 306 L1285 246 M885 282 L1285 222"/></g><circle pathLength="1" class="" style="--i:10" cx="190" cy="190" r="72"/><circle pathLength="1" class="soft" style="--i:11" cx="190" cy="190" r="60"/><circle pathLength="1" class="" style="--i:0" cx="190" cy="190" r="30"/><path pathLength="1" class="faint" style="--i:1" d="M247.2 223.0 L245.4 225.9 L243.4 228.8 L241.3 231.5 L239.0 234.2 L236.7 236.7 L234.2 239.0 L231.5 241.3 L228.8 243.4 L225.9 245.4 L223.0 247.2 L220.0 248.8 L216.8 250.3 L213.7 251.6 L210.4 252.8 L207.1 253.8 L203.7 254.6 L200.3 255.2 L196.9 255.6 L193.5 255.9 L190.0 256.0 L186.5 255.9 L183.1 255.6 L179.7 255.2 L176.3 254.6 L172.9 253.8 L169.6 252.8 L166.3 251.6 L163.2 250.3 L160.0 248.8 L157.0 247.2 L154.1 245.4 L151.2 243.4 L148.5 241.3 L145.8 239.0 L143.3 236.7 L141.0 234.2 L138.7 231.5 L136.6 228.8 L134.6 225.9 L132.8 223.0"/><path pathLength="1" class="" style="--i:2" d="M410 92 H470 V118 H410 Z"/><path pathLength="1" class="" style="--i:3" d="M426 118 L420 132 H460 L454 118"/><path pathLength="1" class="dash" style="--i:4" d="M420 132 L392 236 M460 132 L488 236"/><path pathLength="1" class="soft" style="--i:5" d="M388 236 H492 V250 H388 Z"/><path pathLength="1" class="" style="--i:6" d="M360 262 H520"/><path pathLength="1" class="faint" style="--i:7" d="M440 228 V258 M426 243 H454"/><path pathLength="1" class="" style="--i:8" d="M711.0 99.1 L709.3 99.9 L707.5 100.7 L705.7 101.3 L703.8 101.7 L701.9 101.9 L700.0 102.0 L698.1 101.9 L696.2 101.7 L694.3 101.3 L692.5 100.7 L690.7 99.9 L689.0 99.1"/><path pathLength="1" class="" style="--i:9" d="M795.0 244.5 L790.7 247.0 L786.3 249.3 L781.8 251.5 L777.3 253.6 L772.7 255.5 L768.1 257.4 L763.4 259.1 L758.7 260.7 L754.0 262.2 L749.2 263.5 L744.4 264.8 L739.5 265.8 L734.6 266.8 L729.7 267.7 L724.8 268.4 L719.9 269.0 L714.9 269.4 L709.9 269.7 L705.0 269.9 L700.0 270.0 L695.0 269.9 L690.1 269.7 L685.1 269.4 L680.1 269.0 L675.2 268.4 L670.3 267.7 L665.4 266.8 L660.5 265.8 L655.6 264.8 L650.8 263.5 L646.0 262.2 L641.3 260.7 L636.6 259.1 L631.9 257.4 L627.3 255.5 L622.7 253.6 L618.2 251.5 L613.7 249.3 L609.3 247.0 L605.0 244.5"/><path pathLength="1" class="soft" style="--i:10" d="M735.0 140.6 L731.0 142.8 L726.8 144.7 L722.5 146.3 L718.1 147.6 L713.7 148.7 L709.1 149.4 L704.6 149.9 L700.0 150.0 L695.4 149.9 L690.9 149.4 L686.3 148.7 L681.9 147.6 L677.5 146.3 L673.2 144.7 L669.0 142.8 L665.0 140.6"/><path pathLength="1" class="" style="--i:11" d="M735.0 140.6 L795.0 244.5 M665.0 140.6 L605.0 244.5"/><path pathLength="1" class="faint" style="--i:0" d="M743.8 169.9 L737.9 172.5 L731.8 174.8 L725.6 176.7 L719.3 178.1 L712.9 179.2 L706.5 179.8 L700.0 180.0 L693.5 179.8 L687.1 179.2 L680.7 178.1 L674.4 176.7 L668.2 174.8 L662.1 172.5 L656.2 169.9 M757.0 196.8 L749.3 200.3 L741.4 203.2 L733.3 205.7 L725.1 207.5 L716.8 208.9 L708.4 209.7 L700.0 210.0 L691.6 209.7 L683.2 208.9 L674.9 207.5 L666.7 205.7 L658.6 203.2 L650.7 200.3 L643.0 196.8 M770.1 223.8 L760.7 228.0 L751.0 231.7 L741.0 234.7 L730.9 237.0 L720.7 238.7 L710.4 239.7 L700.0 240.0 L689.6 239.7 L679.3 238.7 L669.1 237.0 L659.0 234.7 L649.0 231.7 L639.3 228.0 L629.9 223.8"/><path pathLength="1" class="soft" style="--i:1" d="M40 312 H180 l10 -6 l10 6 H230 l6 10 l9 -52 l9 60 l6 -18 H300 l14 -10 l14 10 H420 l10 -6 l10 6 H470 l6 10 l9 -52 l9 60 l6 -18 H540 l14 -10 l14 10 H660"/><circle pathLength="1" class="" style="--i:2" cx="1388" cy="96" r="3"/><circle pathLength="1" class="soft" style="--i:3" cx="1388" cy="96" r="16"/><path pathLength="1" class="" style="--i:4" d="M1342 72 V120 M1434 72 V120"/><path pathLength="1" class="soft" style="--i:5" d="M1336 72 V120 M1440 72 V120"/><path pathLength="1" class="" style="--i:6" d="M1398 470 V330 H1354"/><path pathLength="1" class="" style="--i:7" d="M1342 322 H1362 V340 H1342 Z"/><path pathLength="1" class="soft" style="--i:8" d="M1372 470 H1424 V488 H1372 Z"/><circle pathLength="1" class="" style="--i:9" cx="1382" cy="500" r="6"/><circle pathLength="1" class="" style="--i:10" cx="1414" cy="500" r="6"/><path pathLength="1" class="" style="--i:11" d="M1320.2 647.4 L1325.0 644.4 L1330.1 642.0 L1335.4 640.1 L1341.0 638.8 L1346.6 638.1 L1352.3 638.0 L1357.9 638.6 L1363.5 639.8 L1368.8 641.5 L1374.0 643.9 L1378.9 646.8 L1383.4 650.2 L1387.6 654.0 L1391.3 658.3 L1394.5 663.0 L1397.1 668.0 L1399.2 673.3 L1400.8 678.7 L1401.7 684.3 L1402.0 690.0 L1401.7 695.7 L1400.8 701.3 L1399.2 706.7 L1397.1 712.0 L1394.5 717.0 L1391.3 721.7 L1387.6 726.0 L1383.4 729.8 L1378.9 733.2 L1374.0 736.1 L1368.8 738.5 L1363.5 740.2 L1357.9 741.4 L1352.3 742.0 L1346.6 741.9 L1341.0 741.2 L1335.4 739.9 L1330.1 738.0 L1325.0 735.6 L1320.2 732.6"/><path pathLength="1" class="soft" style="--i:0" d="M1324.8 654.0 L1328.8 651.4 L1333.2 649.3 L1337.7 647.8 L1342.4 646.7 L1347.1 646.1 L1351.9 646.0 L1356.7 646.5 L1361.4 647.5 L1365.9 649.0 L1370.3 651.0 L1374.4 653.4 L1378.3 656.3 L1381.8 659.6 L1384.9 663.2 L1387.6 667.2 L1389.9 671.4 L1391.7 675.9 L1393.0 680.5 L1393.7 685.2 L1394.0 690.0 L1393.7 694.8 L1393.0 699.5 L1391.7 704.1 L1389.9 708.6 L1387.6 712.8 L1384.9 716.8 L1381.8 720.4 L1378.3 723.7 L1374.4 726.6 L1370.3 729.0 L1365.9 731.0 L1361.4 732.5 L1356.7 733.5 L1351.9 734.0 L1347.1 733.9 L1342.4 733.3 L1337.7 732.2 L1333.2 730.7 L1328.8 728.6 L1324.8 726.0"/><path pathLength="1" class="" style="--i:1" d="M1308.2 639.4 h22 v10 h-22 Z M1310.2 730.6 h18 v10 h-18 Z"/><path pathLength="1" class="dash" style="--i:2" d="M1320.2 651.4 V730.6"/><path pathLength="1" class="" style="--i:3" d="M1196 640 V738"/><path pathLength="1" class="" style="--i:4" d="M1110 662 H1196 M1110 712 H1196"/><path pathLength="1" class="soft" style="--i:5" d="M1120 712 C1126 684 1160 668 1190 676"/><path pathLength="1" class="" style="--i:6" d="M850 742 C870 712 890 700 914 684 C934 670 952 662 974 640"/><path pathLength="1" class="soft" style="--i:7" d="M914 684 C924 704 944 712 970 714 M944 664 C946 646 940 630 930 616 M886 702 C870 690 854 690 840 694"/></g>
+<g class="idle"><g class="spin" style="transform-origin:1085px 360px"><circle cx="1085" cy="360" r="135" stroke-dasharray="2 9"/></g><g class="spin-rev" style="transform-origin:1085px 360px"><circle class="soft" cx="1085" cy="360" r="235" stroke-dasharray="40 120"/></g><g class="slide" clip-path="url(#bore)"><path d="M885 390 L1285 330" stroke-width="1.6"/></g><circle class="core" cx="1085" cy="360" r="4"/><g class="orbit" style="transform-origin:190px 190px"><rect x="183" y="124" width="14" height="9" rx="2"/><path class="soft" d="M190 133 L164 250 M190 133 L216 250 M190 133 L190 252"/></g><g class="sector" style="transform-origin:700px 80px"><path d="M700 150 L700 270" stroke-width="1.4"/></g><path class="ecg-run" d="M40 312 H180 l10 -6 l10 6 H230 l6 10 l9 -52 l9 60 l6 -18 H300 l14 -10 l14 10 H420 l10 -6 l10 6 H470 l6 10 l9 -52 l9 60 l6 -18 H540 l14 -10 l14 10 H660"/><circle class="emit" cx="1388" cy="96" r="30"/><path class="wire" d="M850 742 C870 712 890 700 914 684 C934 670 952 662 974 640"/></g>
+<g class="idle labels"><text class="lbl" x="1085" y="98" text-anchor="middle">MRI 1.5T</text><text class="lbl" x="190" y="288" text-anchor="middle">CT</text><text class="lbl" x="440" y="288" text-anchor="middle">X-ray</text><text class="lbl" x="800" y="250" text-anchor="start">Ultrasound</text><text class="lbl" x="664" y="316" text-anchor="start">A&amp;E and trauma</text><text class="lbl" x="1434" y="144" text-anchor="end">Nuclear medicine</text><text class="lbl" x="1398" y="526" text-anchor="middle">Mobile</text><text class="lbl" x="1290" y="694" text-anchor="end">Theatre</text><text class="lbl" x="1108" y="650" text-anchor="start">Mammography</text><text class="lbl" x="984" y="644" text-anchor="start">Interventional</text></g>
+</svg></div>
   <div class="shade"></div>
   <div class="wrap">
     <h1 aria-label="Muhammad Ibtsam Khalid"><span class="line" aria-hidden="true">Muhammad</span><span class="line" aria-hidden="true">Ibtsam Khalid</span></h1>
     <div class="meta">
       <div class="lead">HCPC registered Diagnostic Radiographer, working in MRI with a background in CT and trauma imaging.</div>
       <div><span>Registration</span>HCPC RA103288</div>
-      <div><span>Modalities</span>MRI, CT, X-ray</div>
-      <div><span>Right to work</span>UK, no sponsorship needed</div>
+      <div><span>Based in</span>London, United Kingdom</div>
+      <div><span>Right to work</span>UK, valid to 3 Feb 2028</div>
     </div>
   </div>
 </section>
 
-<section class="statement grain" data-label="Introduction">
+<section class="statement" data-theme="light" data-label="Introduction">
   <div class="wrap">
     <p class="lit-text">Trained in a 24-hour teaching hospital in Lahore, across trauma, ICU and outpatient imaging. Now scanning on a 1.5T Siemens MRI in the UK, with an MSc from the University of Kent and a long-term goal of becoming a reporting radiographer.</p>
   </div>
 </section>
 
-<section class="figures grain">
-  <div class="wrap">
+<section class="figures" data-theme="light" data-label="Introduction">
+  <div class="wrap has-rule">
     <div><b data-count="1728" data-format="comma">1,728</b><span>certified clinical hours across 10 imaging modalities</span></div>
     <div><b><span data-count="15">15</span>→<span data-count="11" data-from="15">11</span>%</b><span>repeat imaging rate after a QI project I helped lead</span></div>
     <div><b data-count="64">64</b><span>studies reviewed in my MSc dissertation on AI in radiology</span></div>
@@ -276,283 +380,350 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   </div>
 </section>
 
-
-<section class="sec" id="equipment" data-label="Equipment">
-  <div class="wrap">
-    <div class="head">
+<section class="sec split" id="equipment" data-theme="light" data-label="Equipment">
+  <div class="wrap grid">
+    <aside class="aside"><div class="pin">
       <h2><span class="mask"><span>Equipment</span></span></h2>
       <p>The scanners and systems I've worked on, and how I used each one.</p>
-    </div>
-    <div class="ledger">
-      <div class="row"><h3>MRI</h3><div class="model">Siemens 1.5T</div><p>Brain, spine, shoulder, knee, hip and ankle examinations, within the hospital's MRI safety procedures.</p><div class="tag on">Current, independent</div></div>
-      <div class="row"><h3>CT</h3><div class="model">Canon Aquilion</div><p>CT scanning including critical trauma cases, with dose kept as low as reasonably possible.</p><div class="tag">Independent</div></div>
-      <div class="row"><h3>X-ray and trauma</h3><div class="model">Fujifilm FDR and CR</div><p>A&amp;E and trauma imaging, including patients on spinal boards who couldn't be moved.</p><div class="tag">Independent</div></div>
-      <div class="row"><h3>Mobile and ICU</h3><div class="model">Samsung mobile units</div><p>Bedside imaging on wards and in ICU, often for unstable patients where a repeat isn't safe.</p><div class="tag">Independent</div></div>
-      <div class="row"><h3>Fluoroscopy</h3><div class="model">Philips</div><p>C-arm imaging in sterile theatre settings.</p><div class="tag">Placement training</div></div>
-      <div class="row"><h3>Ultrasound</h3><div class="model">Philips EPIQ</div><p>Renal and gynaecological scanning, including urgent escalation of unexpected findings.</p><div class="tag">Rotational practice</div></div>
-      <div class="row"><h3>Systems</h3><div class="model">PACS, RIS and EPR</div><p>Accurate documentation and image management across every modality.</p><div class="tag">Daily use</div></div>
+      <span class="meta-line">Seven systems, from MRI to PACS</span>
+    <svg class="draw" viewBox="0 0 220 220" aria-hidden="true"><g transform="translate(10 10)">
+<g class="ln"><circle pathLength="1" class="" style="--i:0" cx="100" cy="100" r="96"/><path pathLength="1" class="soft" style="--i:1" d="M196.0 100.0 L188.0 100.0 M195.6 108.4 L192.6 108.1 M194.5 116.7 L191.6 116.1 M192.7 124.8 L189.8 124.1 M190.2 132.8 L187.4 131.8 M187.0 140.6 L184.3 139.3 M183.1 148.0 L176.2 144.0 M178.6 155.1 L176.2 153.3 M173.5 161.7 L171.2 159.8 M167.9 167.9 L165.8 165.8 M161.7 173.5 L159.8 171.2 M155.1 178.6 L153.3 176.2 M148.0 183.1 L144.0 176.2 M140.6 187.0 L139.3 184.3 M132.8 190.2 L131.8 187.4 M124.8 192.7 L124.1 189.8 M116.7 194.5 L116.1 191.6 M108.4 195.6 L108.1 192.6 M100.0 196.0 L100.0 188.0 M91.6 195.6 L91.9 192.6 M83.3 194.5 L83.9 191.6 M75.2 192.7 L75.9 189.8 M67.2 190.2 L68.2 187.4 M59.4 187.0 L60.7 184.3 M52.0 183.1 L56.0 176.2 M44.9 178.6 L46.7 176.2 M38.3 173.5 L40.2 171.2 M32.1 167.9 L34.2 165.8 M26.5 161.7 L28.8 159.8 M21.4 155.1 L23.8 153.3 M16.9 148.0 L23.8 144.0 M13.0 140.6 L15.7 139.3 M9.8 132.8 L12.6 131.8 M7.3 124.8 L10.2 124.1 M5.5 116.7 L8.4 116.1 M4.4 108.4 L7.4 108.1 M4.0 100.0 L12.0 100.0 M4.4 91.6 L7.4 91.9 M5.5 83.3 L8.4 83.9 M7.3 75.2 L10.2 75.9 M9.8 67.2 L12.6 68.2 M13.0 59.4 L15.7 60.7 M16.9 52.0 L23.8 56.0 M21.4 44.9 L23.8 46.7 M26.5 38.3 L28.8 40.2 M32.1 32.1 L34.2 34.2 M38.3 26.5 L40.2 28.8 M44.9 21.4 L46.7 23.8 M52.0 16.9 L56.0 23.8 M59.4 13.0 L60.7 15.7 M67.2 9.8 L68.2 12.6 M75.2 7.3 L75.9 10.2 M83.3 5.5 L83.9 8.4 M91.6 4.4 L91.9 7.4 M100.0 4.0 L100.0 12.0 M108.4 4.4 L108.1 7.4 M116.7 5.5 L116.1 8.4 M124.8 7.3 L124.1 10.2 M132.8 9.8 L131.8 12.6 M140.6 13.0 L139.3 15.7 M148.0 16.9 L144.0 23.8 M155.1 21.4 L153.3 23.8 M161.7 26.5 L159.8 28.8 M167.9 32.1 L165.8 34.2 M173.5 38.3 L171.2 40.2 M178.6 44.9 L176.2 46.7 M183.1 52.0 L176.2 56.0 M187.0 59.4 L184.3 60.7 M190.2 67.2 L187.4 68.2 M192.7 75.2 L189.8 75.9 M194.5 83.3 L191.6 83.9 M195.6 91.6 L192.6 91.9"/><circle pathLength="1" class="soft" style="--i:1" cx="100" cy="100" r="82"/><circle pathLength="1" class="" style="--i:2" cx="100" cy="100" r="72"/><circle pathLength="1" class="" style="--i:3" cx="100" cy="100" r="46"/><path pathLength="1" class="" style="--i:4" d="M100 0 V14 M100 186 V200 M0 100 H14 M186 100 H200"/><path pathLength="1" class="soft" style="--i:4" d="M150.0 100.0 L168.0 100.0 M143.3 125.0 L158.9 134.0 M125.0 143.3 L134.0 158.9 M100.0 150.0 L100.0 168.0 M75.0 143.3 L66.0 158.9 M56.7 125.0 L41.1 134.0 M50.0 100.0 L32.0 100.0 M56.7 75.0 L41.1 66.0 M75.0 56.7 L66.0 41.1 M100.0 50.0 L100.0 32.0 M125.0 56.7 L134.0 41.1 M143.3 75.0 L158.9 66.0"/><path pathLength="1" class="soft" style="--i:5" d="M62 128 H138 M70 134 H130"/></g>
+<g class="idle spin"><circle cx="100" cy="100" r="59" stroke-dasharray="1.5 6"/></g>
+<g class="idle spin-rev"><circle cx="100" cy="100" r="88" stroke-dasharray="14 40" class="soft"/></g>
+<circle class="idle core" cx="100" cy="100" r="2.6"/>
+<text class="idle lbl" x="200" y="200" text-anchor="end">B₀ 1.5T</text></g></svg></div></aside>
+    <div class="body">
+      <div class="focus cards two">
+        <article class="item glass lift"><div class="item-top"><h3>MRI</h3><span class="tag on">Current, independent</span></div><span class="sub">Siemens 1.5T</span><p>Brain, spine, shoulder, knee, hip and ankle examinations, with MRI safety screening completed for every patient.</p></article>
+        <article class="item glass lift"><div class="item-top"><h3>CT</h3><span class="tag">Independent</span></div><span class="sub">Canon Aquilion</span><p>CT scanning including critical trauma cases, with dose kept as low as reasonably possible.</p></article>
+        <article class="item glass lift"><div class="item-top"><h3>X-ray and trauma</h3><span class="tag">Independent</span></div><span class="sub">Fujifilm FDR and CR</span><p>A&amp;E and trauma imaging, including patients on spinal boards who couldn't be moved.</p></article>
+        <article class="item glass lift"><div class="item-top"><h3>Mobile and ICU</h3><span class="tag">Independent</span></div><span class="sub">Samsung mobile units</span><p>Bedside imaging on wards and in ICU, often for unstable patients where a repeat isn't safe.</p></article>
+        <article class="item glass lift"><div class="item-top"><h3>Ultrasound</h3><span class="tag">Rotational practice</span></div><span class="sub">Philips EPIQ</span><p>Renal and gynaecological scanning, including urgent escalation of unexpected findings.</p></article>
+        <article class="item glass lift"><div class="item-top"><h3>Fluoroscopy</h3><span class="tag">Placement training</span></div><span class="sub">Philips</span><p>C-arm imaging in sterile theatre settings.</p></article>
+        <article class="item glass lift"><div class="item-top"><h3>Systems</h3><span class="tag">Daily use</span></div><span class="sub">PACS, RIS and EPR</span><p>Accurate documentation and image management across every modality.</p></article>
+      </div>
+      
     </div>
   </div>
 </section>
 
-
-<section class="sec dark grain" id="experience" data-label="Experience">
-  <div class="wrap">
-    <div class="head">
+<section class="sec split" id="experience" data-theme="light" data-label="Experience">
+  <div class="wrap grid">
+    <aside class="aside"><div class="pin">
       <h2><span class="mask"><span>Experience</span></span></h2>
       <p>Clinical work in Pakistan and the UK, plus an NHS observership I arranged myself.</p>
-    </div>
-    <div class="roles">
-      <div class="role"><div class="when">Sep 2026 to now</div><div><h3>Bank MRI Radiographer</h3><div class="org">Chartwell Private Hospital</div></div><ul><li>Scanning independently on a Siemens 1.5T MRI scanner</li><li>Mixed caseload: brain, spine, shoulder, knee, hip and ankle</li><li>Working within the hospital's MRI safety and patient-screening workflow</li></ul></div>
-      <div class="role"><div class="when">Mar to Sep 2026</div><div><h3>Student Radiographer Observership <span class="pill">Self-arranged</span></h3><div class="org">Maidstone and Tunbridge Wells NHS Trust</div></div><ul><li>Observed A&amp;E, theatres, CT and nuclear medicine</li><li>Studied how IR(ME)R 2017 works in NHS practice: justification, authorisation and dose monitoring</li><li>Followed the patient pathway through booking, vetting and reporting on RIS and PACS</li></ul></div>
-      <div class="role"><div class="when">Nov 2025 to now</div><div><h3>Young Futures Concierge</h3><div class="org">YMCA Thames Gateway</div></div><ul><li>Ofsted-regulated residential care for looked-after young people aged 16 to 17</li><li>Perfect attendance record since starting</li></ul></div>
-      <div class="role"><div class="when">Aug 2023 to Aug 2024</div><div><h3>Diagnostic Radiographer, Rotational</h3><div class="org">University of Lahore Teaching Hospital</div></div><ul><li>Rotated across X-ray, CT and ultrasound, 10 to 15 examinations a day</li><li>Helped lead a QI project that cut the repeat imaging rate from 15% to 11% in three months</li><li>Low recall rates on mobile and ICU imaging of unstable patients</li><li>Trained junior staff and gave a CT teaching session to the radiography team</li></ul></div>
-      <div class="role"><div class="when">Aug 2019 to Aug 2023</div><div><h3>Clinical Placement, BSc</h3><div class="org">University of Lahore Teaching Hospital</div></div><ul><li>1,728 certified clinical hours across 10 imaging modalities</li><li>General, A&amp;E, mobile, theatre, CT, MRI, ultrasound, nuclear medicine, mammography and interventional radiology</li></ul></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="scope" data-label="Clinical scope">
-  <div class="wrap">
-    <div class="head">
-      <h2><span class="mask"><span>Clinical scope</span></span></h2>
-      <p>What I do independently, what I trained in on placement, and the frameworks I work within.</p>
-    </div>
-    <div class="scope">
-      <div><h3>Independent practice</h3><ul><li>MRI at 1.5T</li><li>CT</li><li>General radiography</li><li>A&amp;E and trauma</li><li>Mobile and ICU</li></ul></div>
-      <div><h3>Placement training</h3><ul><li>Theatre and fluoroscopy</li><li>Ultrasound</li><li>Mammography</li><li>Nuclear medicine</li><li>Interventional radiology</li></ul></div>
-      <div><h3>Safety and governance</h3><ul><li>IR(ME)R 2017</li><li>Dose optimisation</li><li>Patient identification</li><li>Infection control</li><li>Clinical audit</li></ul></div>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="sec" id="education" data-label="Education">
-  <div class="wrap">
-    <div class="head">
-      <h2><span class="mask"><span>Education</span></span></h2>
-      <p>Clinical training in Lahore, then healthcare management in the UK.</p>
-    </div>
-    <div class="edu">
-      <div>
-        <h3>MSc Healthcare Management, Distinction</h3>
-        <div class="sub">University of Kent, 2024 to 2025</div>
-        <p>Dissertation: <em>From Pixels to Precision: Human-AI Synergy in Radiological Diagnostics</em>. A systematic review of 64 studies on how radiographers and AI can work together, and how AI might reduce diagnostic error while the radiographer stays central to clinical decisions.</p>
-        <p style="margin-top:18px"><a href="dissertation.html">Read the dissertation</a> <span class="u">(password needed, ask me for it)</span></p>
+      <span class="meta-line">2019 to now</span>
+    <svg class="draw" viewBox="0 0 220 220" aria-hidden="true"><g transform="translate(10 10)">
+<defs><clipPath id="skull"><ellipse cx="100" cy="96" rx="80" ry="66" transform="rotate(-8 100 96)"/></clipPath></defs>
+<g class="ln"><ellipse pathLength="1" style="--i:0" cx="100" cy="96" rx="80" ry="66" transform="rotate(-8 100 96)"/>
+<ellipse pathLength="1" class="soft" style="--i:1" cx="98" cy="92" rx="70" ry="54" transform="rotate(-8 98 92)"/>
+<path pathLength="1" class="soft" style="--i:2" d="M60 104 Q100 76 140 92 Q132 100 120 98 Q100 92 74 108 Z"/>
+<path pathLength="1" class="soft" style="--i:2" d="M118 124 Q140 116 150 132 Q140 148 120 142 Z"/>
+<path pathLength="1" class="" style="--i:3" d="M112 122 Q110 140 106 156"/>
+<g clip-path="url(#skull)"><path pathLength="1" class="" style="--i:4" d="M28 150.0 L172 124.0"/><path pathLength="1" class="soft" style="--i:4" d="M28 137.0 L172 111.0"/><path pathLength="1" class="" style="--i:4" d="M28 124.0 L172 98.0"/><path pathLength="1" class="soft" style="--i:4" d="M28 111.0 L172 85.0"/><path pathLength="1" class="" style="--i:4" d="M28 98.0 L172 72.0"/><path pathLength="1" class="soft" style="--i:4" d="M28 85.0 L172 59.0"/><path pathLength="1" class="" style="--i:4" d="M28 72.0 L172 46.0"/><path pathLength="1" class="soft" style="--i:4" d="M28 59.0 L172 33.0"/><path pathLength="1" class="" style="--i:4" d="M28 46.0 L172 20.0"/></g>
+<circle pathLength="1" class="" style="--i:5" cx="80" cy="104" r="2.6"/><circle pathLength="1" class="" style="--i:5" cx="122" cy="96" r="2.6"/><path pathLength="1" class="soft" style="--i:5" d="M80 104 L122 96"/>
+<path pathLength="1" class="soft" style="--i:6" d="M186 40 H192 V150 H186"/></g>
+<g class="idle slide" clip-path="url(#skull)"><path d="M20 110 L180 82" stroke-width="1.8"/></g>
+<text class="idle lbl" x="196" y="196" text-anchor="end">AC–PC</text></g></svg></div></aside>
+    <div class="body">
+      <div class="focus cards">
+        <article class="item role glass lift"><span class="when">Sep 2026 to now</span><h3>Bank MRI Radiographer</h3><span class="sub">Chartwell Private Hospital</span><ul><li>Scanning independently on a Siemens 1.5T MRI scanner</li><li>Mixed outpatient list: brain, spine, shoulder, knee, hip and ankle</li><li>MRI safety screening completed personally for every patient</li></ul></article>
+        <article class="item role glass lift"><span class="when">Mar to Sep 2026</span><h3>Student Radiographer Observership <span class="pill">Self-arranged</span></h3><span class="sub">Maidstone and Tunbridge Wells NHS Trust</span><ul><li>Observed A&amp;E, theatres, CT and nuclear medicine</li><li>Studied how IR(ME)R 2017 works in NHS practice: justification, authorisation and dose monitoring</li><li>Followed the patient pathway through booking, vetting and reporting on RIS and PACS</li></ul></article>
+        <article class="item role glass lift"><span class="when">Nov 2025 to now</span><h3>Young Futures Concierge</h3><span class="sub">YMCA Thames Gateway</span><ul><li>Ofsted-regulated residential care for looked-after young people aged 16 to 17</li><li>Perfect attendance record since starting</li></ul></article>
+        <article class="item role glass lift"><span class="when">Aug 2023 to Aug 2024</span><h3>Diagnostic Radiographer, Rotational</h3><span class="sub">University of Lahore Teaching Hospital</span><ul><li>Rotated across X-ray, CT and ultrasound, 10 to 15 examinations a day</li><li>Helped lead a QI project that cut the repeat imaging rate from 15% to 11% in three months</li><li>Low recall rates on mobile and ICU imaging of unstable patients</li><li>Trained junior staff and gave a CT teaching session to the radiography team</li></ul></article>
+        <article class="item role glass lift"><span class="when">Aug 2019 to Aug 2023</span><h3>Clinical Placement, BSc</h3><span class="sub">University of Lahore Teaching Hospital</span><ul><li>1,728 certified clinical hours across 10 imaging modalities</li><li>General, A&amp;E, mobile, theatre, CT, MRI, ultrasound, nuclear medicine, mammography and interventional radiology</li></ul></article>
       </div>
-      <div>
-        <h3>BSc (Hons) Medical Imaging Technology</h3>
-        <div class="sub">University of Lahore, 2018 to 2023</div>
-        <p>Five-year programme, 172 credit hours. Accepted by the HCPC as equivalent to a UK diagnostic radiography degree.</p>
-      </div>
-    </div>
-    <div class="paper">
       
-      <div>
-        <small>Peer-reviewed paper, Journal of Neonatal Surgery, 2025</small>
-        <h3>CT Hounsfield Units and Cerebral Infarction Phases</h3>
+    </div>
+  </div>
+</section>
+
+<section class="sec split" id="scope" data-theme="light" data-label="Clinical scope">
+  <div class="wrap grid">
+    <aside class="aside"><div class="pin">
+      <h2><span class="mask"><span>Clinical</span></span><span class="mask"><span>scope</span></span></h2>
+      <p>What I do independently, what I trained in on placement, and the frameworks I work within.</p>
+    <svg class="draw" viewBox="0 0 220 220" aria-hidden="true"><g transform="translate(4 4)">
+<g class="ln"><path pathLength="1" class="" style="--i:0" d="M6 6 H206 V206 H6 Z"/><path pathLength="1" class="soft" style="--i:1" d="M6 6 V18 M16 6 V12 M26 6 V12 M36 6 V12 M46 6 V18 M56 6 V12 M66 6 V12 M76 6 V12 M86 6 V18 M96 6 V12 M106 6 V12 M116 6 V12 M126 6 V18 M136 6 V12 M146 6 V12 M156 6 V12 M166 6 V18 M176 6 V12 M186 6 V12 M196 6 V12 M206 6 V18 M6 6 H18 M6 16 H12 M6 26 H12 M6 36 H12 M6 46 H18 M6 56 H12 M6 66 H12 M6 76 H12 M6 86 H18 M6 96 H12 M6 106 H12 M6 116 H12 M6 126 H18 M6 136 H12 M6 146 H12 M6 156 H12 M6 166 H18 M6 176 H12 M6 186 H12 M6 196 H12 M6 206 H18"/><circle pathLength="1" class="soft" style="--i:2" cx="106" cy="106" r="30"/><circle pathLength="1" class="soft" style="--i:2" cx="106" cy="106" r="56"/><circle pathLength="1" class="soft" style="--i:3" cx="106" cy="106" r="82"/>
+<path pathLength="1" class="" style="--i:3" d="M106 20 V192 M20 106 H192"/><path pathLength="1" class="" style="--i:4" d="M46 66 V46 H66 M146 46 H166 V66 M166 146 V166 H146 M66 166 H46 V146"/><circle pathLength="1" class="" style="--i:5" cx="106" cy="106" r="5"/></g>
+<g class="idle breathe"><rect x="62" y="62" width="88" height="88" stroke-dasharray="3 5"/></g>
+<text class="idle lbl" x="204" y="200" text-anchor="end">field 24 × 30</text></g></svg></div></aside>
+    <div class="body">
+      <div class="scope">
+        <div class="lift"><h3>Independent practice</h3><ul><li>MRI at 1.5T</li><li>CT</li><li>General radiography</li><li>A&amp;E and trauma</li><li>Mobile and ICU</li></ul></div>
+        <div class="lift"><h3>Placement training</h3><ul><li>Theatre and fluoroscopy</li><li>Ultrasound</li><li>Mammography</li><li>Nuclear medicine</li><li>Interventional radiology</li></ul></div>
+        <div class="lift"><h3>Safety and governance</h3><ul><li>IR(ME)R 2017</li><li>Dose optimisation</li><li>Patient identification</li><li>Infection control</li><li>Clinical audit</li></ul></div>
       </div>
-      <a href="https://doi.org/10.63682/jns.v14i7.5888" target="_blank" rel="noopener">Read the paper</a>
     </div>
   </div>
 </section>
 
-<section class="sec cpd" id="cpd" style="padding-top:40px" data-label="CPD">
-  <div class="wrap">
-    <div class="head">
+<section class="sec split" id="education" data-theme="light" data-label="Education" style="padding-top:0">
+  <div class="wrap grid">
+    <aside class="aside"><div class="pin">
+      <h2><span class="mask"><span>Education</span></span></h2>
+      <p>Clinical training in Lahore, then healthcare management in the UK, plus a peer-reviewed paper.</p>
+    <svg class="draw" viewBox="0 0 220 220" aria-hidden="true"><g transform="translate(10 10)">
+<g class="idle kgrid"><circle class="kdot" cx="20" cy="84" r="1"/><circle class="kdot" cx="20" cy="100" r="1"/><circle class="kdot" cx="20" cy="116" r="1"/><circle class="kdot" cx="36" cy="52" r="1"/><circle class="kdot" cx="36" cy="68" r="1"/><circle class="kdot" cx="36" cy="84" r="1"/><circle class="kdot" cx="36" cy="100" r="1"/><circle class="kdot" cx="36" cy="116" r="1"/><circle class="kdot" cx="36" cy="132" r="1"/><circle class="kdot" cx="36" cy="148" r="1"/><circle class="kdot" cx="52" cy="36" r="1"/><circle class="kdot" cx="52" cy="52" r="1"/><circle class="kdot" cx="52" cy="68" r="1"/><circle class="kdot" cx="52" cy="84" r="1"/><circle class="kdot" cx="52" cy="100" r="1"/><circle class="kdot" cx="52" cy="116" r="1"/><circle class="kdot" cx="52" cy="132" r="1"/><circle class="kdot" cx="52" cy="148" r="1"/><circle class="kdot" cx="52" cy="164" r="1"/><circle class="kdot" cx="68" cy="36" r="1"/><circle class="kdot" cx="68" cy="52" r="1"/><circle class="kdot" cx="68" cy="68" r="1"/><circle class="kdot" cx="68" cy="84" r="1"/><circle class="kdot" cx="68" cy="100" r="1"/><circle class="kdot" cx="68" cy="116" r="1"/><circle class="kdot" cx="68" cy="132" r="1"/><circle class="kdot" cx="68" cy="148" r="1"/><circle class="kdot" cx="68" cy="164" r="1"/><circle class="kdot" cx="84" cy="20" r="1"/><circle class="kdot" cx="84" cy="36" r="1"/><circle class="kdot" cx="84" cy="52" r="1"/><circle class="kdot" cx="84" cy="68" r="1"/><circle class="kdot" cx="84" cy="84" r="1"/><circle class="kdot" cx="84" cy="100" r="1"/><circle class="kdot" cx="84" cy="116" r="1"/><circle class="kdot" cx="84" cy="132" r="1"/><circle class="kdot" cx="84" cy="148" r="1"/><circle class="kdot" cx="84" cy="164" r="1"/><circle class="kdot" cx="84" cy="180" r="1"/><circle class="kdot" cx="100" cy="20" r="1"/><circle class="kdot" cx="100" cy="36" r="1"/><circle class="kdot" cx="100" cy="52" r="1"/><circle class="kdot" cx="100" cy="68" r="1"/><circle class="kdot" cx="100" cy="84" r="1"/><circle class="kdot" cx="100" cy="100" r="1"/><circle class="kdot" cx="100" cy="116" r="1"/><circle class="kdot" cx="100" cy="132" r="1"/><circle class="kdot" cx="100" cy="148" r="1"/><circle class="kdot" cx="100" cy="164" r="1"/><circle class="kdot" cx="100" cy="180" r="1"/><circle class="kdot" cx="116" cy="20" r="1"/><circle class="kdot" cx="116" cy="36" r="1"/><circle class="kdot" cx="116" cy="52" r="1"/><circle class="kdot" cx="116" cy="68" r="1"/><circle class="kdot" cx="116" cy="84" r="1"/><circle class="kdot" cx="116" cy="100" r="1"/><circle class="kdot" cx="116" cy="116" r="1"/><circle class="kdot" cx="116" cy="132" r="1"/><circle class="kdot" cx="116" cy="148" r="1"/><circle class="kdot" cx="116" cy="164" r="1"/><circle class="kdot" cx="116" cy="180" r="1"/><circle class="kdot" cx="132" cy="36" r="1"/><circle class="kdot" cx="132" cy="52" r="1"/><circle class="kdot" cx="132" cy="68" r="1"/><circle class="kdot" cx="132" cy="84" r="1"/><circle class="kdot" cx="132" cy="100" r="1"/><circle class="kdot" cx="132" cy="116" r="1"/><circle class="kdot" cx="132" cy="132" r="1"/><circle class="kdot" cx="132" cy="148" r="1"/><circle class="kdot" cx="132" cy="164" r="1"/><circle class="kdot" cx="148" cy="36" r="1"/><circle class="kdot" cx="148" cy="52" r="1"/><circle class="kdot" cx="148" cy="68" r="1"/><circle class="kdot" cx="148" cy="84" r="1"/><circle class="kdot" cx="148" cy="100" r="1"/><circle class="kdot" cx="148" cy="116" r="1"/><circle class="kdot" cx="148" cy="132" r="1"/><circle class="kdot" cx="148" cy="148" r="1"/><circle class="kdot" cx="148" cy="164" r="1"/><circle class="kdot" cx="164" cy="52" r="1"/><circle class="kdot" cx="164" cy="68" r="1"/><circle class="kdot" cx="164" cy="84" r="1"/><circle class="kdot" cx="164" cy="100" r="1"/><circle class="kdot" cx="164" cy="116" r="1"/><circle class="kdot" cx="164" cy="132" r="1"/><circle class="kdot" cx="164" cy="148" r="1"/><circle class="kdot" cx="180" cy="84" r="1"/><circle class="kdot" cx="180" cy="100" r="1"/><circle class="kdot" cx="180" cy="116" r="1"/></g>
+<g class="ln"><circle pathLength="1" class="" style="--i:0" cx="100" cy="100" r="92"/><path pathLength="1" class="soft" style="--i:1" d="M192.0 100.0 L185.0 100.0 M191.2 112.0 L188.2 111.6 M188.9 123.8 L186.0 123.0 M185.0 135.2 L182.2 134.1 M179.7 146.0 L173.6 142.5 M173.0 156.0 L170.6 154.2 M165.1 165.1 L162.9 162.9 M156.0 173.0 L154.2 170.6 M146.0 179.7 L142.5 173.6 M135.2 185.0 L134.1 182.2 M123.8 188.9 L123.0 186.0 M112.0 191.2 L111.6 188.2 M100.0 192.0 L100.0 185.0 M88.0 191.2 L88.4 188.2 M76.2 188.9 L77.0 186.0 M64.8 185.0 L65.9 182.2 M54.0 179.7 L57.5 173.6 M44.0 173.0 L45.8 170.6 M34.9 165.1 L37.1 162.9 M27.0 156.0 L29.4 154.2 M20.3 146.0 L26.4 142.5 M15.0 135.2 L17.8 134.1 M11.1 123.8 L14.0 123.0 M8.8 112.0 L11.8 111.6 M8.0 100.0 L15.0 100.0 M8.8 88.0 L11.8 88.4 M11.1 76.2 L14.0 77.0 M15.0 64.8 L17.8 65.9 M20.3 54.0 L26.4 57.5 M27.0 44.0 L29.4 45.8 M34.9 34.9 L37.1 37.1 M44.0 27.0 L45.8 29.4 M54.0 20.3 L57.5 26.4 M64.8 15.0 L65.9 17.8 M76.2 11.1 L77.0 14.0 M88.0 8.8 L88.4 11.8 M100.0 8.0 L100.0 15.0 M112.0 8.8 L111.6 11.8 M123.8 11.1 L123.0 14.0 M135.2 15.0 L134.1 17.8 M146.0 20.3 L142.5 26.4 M156.0 27.0 L154.2 29.4 M165.1 34.9 L162.9 37.1 M173.0 44.0 L170.6 45.8 M179.7 54.0 L173.6 57.5 M185.0 64.8 L182.2 65.9 M188.9 76.2 L186.0 77.0 M191.2 88.0 L188.2 88.4"/><path pathLength="1" class="soft" style="--i:2" d="M100 4 V196 M4 100 H196"/></g>
+<g class="idle turn"><circle class="core" r="3"><animateMotion dur="10s" repeatCount="indefinite" path="M103.0 100.0 L103.1 100.2 L103.3 100.3 L103.4 100.5 L103.5 100.7 L103.6 101.0 L103.7 101.2 L103.7 101.4 L103.8 101.7 L103.8 102.0 L103.8 102.2 L103.8 102.5 L103.8 102.8 L103.7 103.1 L103.7 103.4 L103.6 103.7 L103.5 103.9 L103.4 104.2 L103.2 104.5 L103.1 104.8 L102.9 105.1 L102.7 105.4 L102.4 105.6 L102.2 105.9 L101.9 106.1 L101.6 106.3 L101.3 106.6 L101.0 106.8 L100.6 106.9 L100.3 107.1 L99.9 107.3 L99.5 107.4 L99.1 107.5 L98.7 107.6 L98.3 107.6 L97.8 107.7 L97.4 107.7 L96.9 107.7 L96.5 107.6 L96.0 107.5 L95.5 107.4 L95.1 107.3 L94.6 107.2 L94.1 107.0 L93.7 106.8 L93.2 106.5 L92.8 106.2 L92.4 105.9 L91.9 105.6 L91.5 105.3 L91.1 104.9 L90.8 104.5 L90.4 104.0 L90.1 103.6 L89.8 103.1 L89.5 102.6 L89.2 102.0 L89.0 101.5 L88.8 100.9 L88.6 100.3 L88.5 99.7 L88.4 99.1 L88.3 98.5 L88.3 97.8 L88.2 97.2 L88.3 96.5 L88.3 95.9 L88.4 95.2 L88.6 94.5 L88.8 93.9 L89.0 93.2 L89.2 92.6 L89.5 91.9 L89.9 91.3 L90.2 90.7 L90.7 90.0 L91.1 89.5 L91.6 88.9 L92.1 88.3 L92.7 87.8 L93.2 87.3 L93.9 86.9 L94.5 86.4 L95.2 86.0 L95.9 85.6 L96.6 85.3 L97.4 85.0 L98.2 84.8 L98.9 84.5 L99.8 84.4 L100.6 84.2 L101.4 84.1 L102.3 84.1 L103.2 84.1 L104.0 84.2 L104.9 84.3 L105.8 84.4 L106.6 84.6 L107.5 84.8 L108.4 85.1 L109.2 85.5 L110.1 85.9 L110.9 86.3 L111.7 86.8 L112.5 87.3 L113.2 87.9 L113.9 88.5 L114.6 89.2 L115.3 89.9 L115.9 90.7 L116.5 91.4 L117.1 92.3 L117.6 93.1 L118.1 94.0 L118.5 94.9 L118.9 95.9 L119.2 96.9 L119.5 97.9 L119.7 98.9 L119.9 99.9 L120.0 101.0 L120.1 102.1 L120.1 103.2 L120.0 104.2 L119.9 105.3 L119.7 106.4 L119.5 107.5 L119.2 108.6 L118.9 109.6 L118.4 110.7 L118.0 111.7 L117.4 112.7 L116.9 113.7 L116.2 114.7 L115.5 115.6 L114.8 116.5 L114.0 117.4 L113.1 118.2 L112.2 119.0 L111.3 119.8 L110.3 120.5 L109.2 121.1 L108.1 121.7 L107.0 122.2 L105.9 122.7 L104.7 123.1 L103.5 123.5 L102.3 123.8 L101.0 124.0 L99.8 124.2 L98.5 124.3 L97.2 124.3 L95.9 124.2 L94.6 124.1 L93.3 123.9 L92.0 123.7 L90.7 123.4 L89.4 123.0 L88.1 122.5 L86.9 122.0 L85.7 121.4 L84.5 120.7 L83.3 120.0 L82.2 119.1 L81.1 118.3 L80.1 117.4 L79.1 116.4 L78.1 115.3 L77.2 114.2 L76.4 113.1 L75.6 111.9 L74.9 110.6 L74.2 109.3 L73.6 108.0 L73.1 106.6 L72.6 105.2 L72.3 103.8 L72.0 102.3 L71.7 100.9 L71.6 99.4 L71.5 97.8 L71.5 96.3 L71.6 94.8 L71.8 93.3 L72.1 91.8 L72.4 90.3 L72.8 88.8 L73.3 87.3 L73.9 85.8 L74.6 84.4 L75.3 83.0 L76.1 81.6 L77.0 80.3 L78.0 79.0 L79.0 77.8 L80.1 76.6 L81.3 75.5 L82.6 74.4 L83.9 73.4 L85.2 72.5 L86.6 71.6 L88.1 70.8 L89.6 70.1 L91.2 69.4 L92.8 68.9 L94.4 68.4 L96.0 68.0 L97.7 67.7 L99.4 67.5 L101.1 67.3 L102.9 67.3 L104.6 67.4 L106.4 67.5 L108.1 67.8 L109.8 68.1 L111.6 68.5 L113.3 69.0 L114.9 69.7 L116.6 70.4 L118.2 71.2 L119.8 72.0 L121.3 73.0 L122.8 74.1 L124.2 75.2 L125.6 76.4 L126.9 77.7 L128.2 79.1 L129.4 80.5 L130.5 82.0 L131.5 83.6 L132.5 85.2 L133.3 86.9 L134.1 88.6 L134.8 90.4 L135.4 92.2 L135.9 94.1 L136.3 96.0 L136.6 97.9 L136.8 99.8 L136.9 101.8 L136.9 103.7 L136.8 105.7 L136.6 107.6 L136.3 109.6 L135.8 111.5 L135.3 113.5 L134.7 115.4 L133.9 117.2 L133.1 119.1 L132.2 120.9 L131.1 122.6 L130.0 124.3 L128.8 126.0 L127.5 127.6 L126.1 129.1 L124.6 130.5 L123.1 131.9 L121.4 133.2 L119.7 134.4 L117.9 135.5 L116.1 136.5 L114.2 137.5 L112.2 138.3 L110.2 139.0 L108.2 139.7 L106.1 140.2 L104.0 140.6 L101.9 140.9 L99.7 141.1 L97.5 141.1 L95.3 141.1 L93.2 140.9 L91.0 140.6 L88.8 140.2 L86.6 139.7 L84.5 139.1 L82.4 138.4 L80.4 137.5 L78.3 136.5 L76.4 135.5 L74.4 134.3 L72.6 133.0 L70.8 131.6 L69.0 130.1 L67.4 128.5 L65.8 126.9 L64.3 125.1 L62.9 123.3 L61.6 121.3 L60.4 119.3 L59.3 117.3 L58.4 115.2 L57.5 113.0 L56.7 110.8 L56.1 108.5 L55.5 106.2 L55.1 103.8 L54.9 101.5 L54.7 99.1 L54.7 96.7 L54.8 94.3 L55.0 91.9 L55.3 89.5 L55.8 87.1 L56.4 84.7 L57.2 82.4 L58.0 80.1 L59.0 77.9 L60.1 75.7 L61.3 73.5 L62.7 71.4 L64.1 69.4 L65.7 67.4 L67.3 65.6 L69.1 63.8 L71.0 62.1 L72.9 60.5 L75.0 59.0 L77.1 57.6 L79.3 56.4 L81.6 55.2 L83.9 54.1 L86.3 53.2 L88.8 52.4 L91.3 51.8 L93.8 51.2 L96.4 50.8 L99.0 50.6 L101.6 50.5 L104.2 50.5 L106.9 50.6 L109.5 50.9 L112.1 51.3 L114.7 51.9 L117.3 52.6 L119.8 53.5 L122.3 54.4 L124.7 55.6 L127.1 56.8 L129.4 58.2 L131.7 59.7 L133.9 61.3 L136.0 63.0 L138.0 64.9 L139.9 66.9 L141.7 68.9 L143.4 71.1 L145.0 73.3 L146.4 75.7 L147.8 78.1 L149.0 80.6 L150.1 83.2 L151.0 85.8 L151.9 88.5 L152.5 91.2 L153.1 94.0 L153.5 96.8 L153.7 99.6 L153.8 102.4 L153.7 105.3 L153.5 108.1 L153.1 111.0 L152.6 113.8 L152.0 116.6 L151.1 119.4 L150.2 122.1 L149.1 124.8 L147.8 127.4 L146.4 130.0 L144.9 132.4 L143.2 134.9 L141.4 137.2 L139.5 139.4 L137.5 141.6 L135.3 143.6 L133.1 145.5 L130.7 147.3 L128.2 149.0 L125.7 150.5 L123.0 151.9 L120.3 153.2 L117.5 154.4 L114.7 155.3 L111.7 156.2 L108.8 156.9 L105.8 157.4 L102.8 157.7 L99.7 158.0 L96.6 158.0 L93.6 157.9 L90.5 157.6 L87.4 157.2 L84.4 156.6 L81.4 155.8 L78.4 154.9 L75.5 153.8 L72.6 152.5 L69.8 151.1 L67.1 149.6 L64.5 147.9 L61.9 146.1 L59.4 144.1 L57.0 142.0 L54.8 139.8 L52.6 137.4 L50.6 134.9 L48.7 132.4 L46.9 129.7 L45.3 126.9 L43.9 124.0 L42.5 121.1 L41.4 118.1 L40.4 115.0 L39.5 111.9 L38.8 108.7 L38.3 105.4 L38.0 102.2 L37.8 98.9 L37.8 95.6 L38.0 92.3 L38.3 89.0 L38.9 85.8 L39.6 82.5 L40.4 79.3 L41.5 76.1 L42.7 73.0 L44.1 70.0 L45.6 67.0 L47.3 64.1 L49.2 61.3 L51.2 58.5 L53.3 55.9 L55.6 53.4 L58.0 51.0 L60.6 48.8 L63.3 46.7 L66.0 44.7 L68.9 42.8 L71.9 41.1 L75.0 39.6 L78.2 38.3 L81.5 37.1 L84.8 36.0 L88.1 35.2 L91.6 34.5 L95.0 34.0 L98.5 33.7 L102.0 33.6 L105.5 33.6 L109.0 33.9 L112.5 34.3 L116.0 34.9 L119.5 35.7 L122.9 36.7 L126.2 37.8 L129.6 39.2 L132.8 40.7 L135.9 42.4 L139.0 44.3 L142.0 46.3 L144.9 48.5 L147.6 50.8 L150.2 53.3 L152.7 55.9 L155.1 58.7 L157.3 61.6 L159.4 64.6 L161.3 67.7 L163.1 70.9 L164.6 74.2 L166.1 77.6 L167.3 81.1 L168.3 84.6 L169.2 88.2 L169.8 91.9 L170.3 95.6 L170.6 99.3 L170.7 103.0 L170.6 106.8 L170.2 110.5 L169.7 114.2 L169.0 117.9 L168.1 121.6 L167.0 125.2 L165.7 128.7 L164.2 132.2 L162.6 135.6 L160.7 139.0 L158.7 142.2 L156.5 145.3 L154.1 148.3 L151.6 151.2 L148.9 154.0 L146.1 156.6 L143.1 159.1 L140.0 161.4 L136.8 163.5 L133.5 165.5 L130.0 167.3 L126.5 168.9 L122.9 170.4"/></circle><g class="ln"><path pathLength="1" class="" style="--i:3" d="M103.0 100.0 L103.1 100.2 L103.3 100.3 L103.4 100.5 L103.5 100.7 L103.6 101.0 L103.7 101.2 L103.7 101.4 L103.8 101.7 L103.8 102.0 L103.8 102.2 L103.8 102.5 L103.8 102.8 L103.7 103.1 L103.7 103.4 L103.6 103.7 L103.5 103.9 L103.4 104.2 L103.2 104.5 L103.1 104.8 L102.9 105.1 L102.7 105.4 L102.4 105.6 L102.2 105.9 L101.9 106.1 L101.6 106.3 L101.3 106.6 L101.0 106.8 L100.6 106.9 L100.3 107.1 L99.9 107.3 L99.5 107.4 L99.1 107.5 L98.7 107.6 L98.3 107.6 L97.8 107.7 L97.4 107.7 L96.9 107.7 L96.5 107.6 L96.0 107.5 L95.5 107.4 L95.1 107.3 L94.6 107.2 L94.1 107.0 L93.7 106.8 L93.2 106.5 L92.8 106.2 L92.4 105.9 L91.9 105.6 L91.5 105.3 L91.1 104.9 L90.8 104.5 L90.4 104.0 L90.1 103.6 L89.8 103.1 L89.5 102.6 L89.2 102.0 L89.0 101.5 L88.8 100.9 L88.6 100.3 L88.5 99.7 L88.4 99.1 L88.3 98.5 L88.3 97.8 L88.2 97.2 L88.3 96.5 L88.3 95.9 L88.4 95.2 L88.6 94.5 L88.8 93.9 L89.0 93.2 L89.2 92.6 L89.5 91.9 L89.9 91.3 L90.2 90.7 L90.7 90.0 L91.1 89.5 L91.6 88.9 L92.1 88.3 L92.7 87.8 L93.2 87.3 L93.9 86.9 L94.5 86.4 L95.2 86.0 L95.9 85.6 L96.6 85.3 L97.4 85.0 L98.2 84.8 L98.9 84.5 L99.8 84.4 L100.6 84.2 L101.4 84.1 L102.3 84.1 L103.2 84.1 L104.0 84.2 L104.9 84.3 L105.8 84.4 L106.6 84.6 L107.5 84.8 L108.4 85.1 L109.2 85.5 L110.1 85.9 L110.9 86.3 L111.7 86.8 L112.5 87.3 L113.2 87.9 L113.9 88.5 L114.6 89.2 L115.3 89.9 L115.9 90.7 L116.5 91.4 L117.1 92.3 L117.6 93.1 L118.1 94.0 L118.5 94.9 L118.9 95.9 L119.2 96.9 L119.5 97.9 L119.7 98.9 L119.9 99.9 L120.0 101.0 L120.1 102.1 L120.1 103.2 L120.0 104.2 L119.9 105.3 L119.7 106.4 L119.5 107.5 L119.2 108.6 L118.9 109.6 L118.4 110.7 L118.0 111.7 L117.4 112.7 L116.9 113.7 L116.2 114.7 L115.5 115.6 L114.8 116.5 L114.0 117.4 L113.1 118.2 L112.2 119.0 L111.3 119.8 L110.3 120.5 L109.2 121.1 L108.1 121.7 L107.0 122.2 L105.9 122.7 L104.7 123.1 L103.5 123.5 L102.3 123.8 L101.0 124.0 L99.8 124.2 L98.5 124.3 L97.2 124.3 L95.9 124.2 L94.6 124.1 L93.3 123.9 L92.0 123.7 L90.7 123.4 L89.4 123.0 L88.1 122.5 L86.9 122.0 L85.7 121.4 L84.5 120.7 L83.3 120.0 L82.2 119.1 L81.1 118.3 L80.1 117.4 L79.1 116.4 L78.1 115.3 L77.2 114.2 L76.4 113.1 L75.6 111.9 L74.9 110.6 L74.2 109.3 L73.6 108.0 L73.1 106.6 L72.6 105.2 L72.3 103.8 L72.0 102.3 L71.7 100.9 L71.6 99.4 L71.5 97.8 L71.5 96.3 L71.6 94.8 L71.8 93.3 L72.1 91.8 L72.4 90.3 L72.8 88.8 L73.3 87.3 L73.9 85.8 L74.6 84.4 L75.3 83.0 L76.1 81.6 L77.0 80.3 L78.0 79.0 L79.0 77.8 L80.1 76.6 L81.3 75.5 L82.6 74.4 L83.9 73.4 L85.2 72.5 L86.6 71.6 L88.1 70.8 L89.6 70.1 L91.2 69.4 L92.8 68.9 L94.4 68.4 L96.0 68.0 L97.7 67.7 L99.4 67.5 L101.1 67.3 L102.9 67.3 L104.6 67.4 L106.4 67.5 L108.1 67.8 L109.8 68.1 L111.6 68.5 L113.3 69.0 L114.9 69.7 L116.6 70.4 L118.2 71.2 L119.8 72.0 L121.3 73.0 L122.8 74.1 L124.2 75.2 L125.6 76.4 L126.9 77.7 L128.2 79.1 L129.4 80.5 L130.5 82.0 L131.5 83.6 L132.5 85.2 L133.3 86.9 L134.1 88.6 L134.8 90.4 L135.4 92.2 L135.9 94.1 L136.3 96.0 L136.6 97.9 L136.8 99.8 L136.9 101.8 L136.9 103.7 L136.8 105.7 L136.6 107.6 L136.3 109.6 L135.8 111.5 L135.3 113.5 L134.7 115.4 L133.9 117.2 L133.1 119.1 L132.2 120.9 L131.1 122.6 L130.0 124.3 L128.8 126.0 L127.5 127.6 L126.1 129.1 L124.6 130.5 L123.1 131.9 L121.4 133.2 L119.7 134.4 L117.9 135.5 L116.1 136.5 L114.2 137.5 L112.2 138.3 L110.2 139.0 L108.2 139.7 L106.1 140.2 L104.0 140.6 L101.9 140.9 L99.7 141.1 L97.5 141.1 L95.3 141.1 L93.2 140.9 L91.0 140.6 L88.8 140.2 L86.6 139.7 L84.5 139.1 L82.4 138.4 L80.4 137.5 L78.3 136.5 L76.4 135.5 L74.4 134.3 L72.6 133.0 L70.8 131.6 L69.0 130.1 L67.4 128.5 L65.8 126.9 L64.3 125.1 L62.9 123.3 L61.6 121.3 L60.4 119.3 L59.3 117.3 L58.4 115.2 L57.5 113.0 L56.7 110.8 L56.1 108.5 L55.5 106.2 L55.1 103.8 L54.9 101.5 L54.7 99.1 L54.7 96.7 L54.8 94.3 L55.0 91.9 L55.3 89.5 L55.8 87.1 L56.4 84.7 L57.2 82.4 L58.0 80.1 L59.0 77.9 L60.1 75.7 L61.3 73.5 L62.7 71.4 L64.1 69.4 L65.7 67.4 L67.3 65.6 L69.1 63.8 L71.0 62.1 L72.9 60.5 L75.0 59.0 L77.1 57.6 L79.3 56.4 L81.6 55.2 L83.9 54.1 L86.3 53.2 L88.8 52.4 L91.3 51.8 L93.8 51.2 L96.4 50.8 L99.0 50.6 L101.6 50.5 L104.2 50.5 L106.9 50.6 L109.5 50.9 L112.1 51.3 L114.7 51.9 L117.3 52.6 L119.8 53.5 L122.3 54.4 L124.7 55.6 L127.1 56.8 L129.4 58.2 L131.7 59.7 L133.9 61.3 L136.0 63.0 L138.0 64.9 L139.9 66.9 L141.7 68.9 L143.4 71.1 L145.0 73.3 L146.4 75.7 L147.8 78.1 L149.0 80.6 L150.1 83.2 L151.0 85.8 L151.9 88.5 L152.5 91.2 L153.1 94.0 L153.5 96.8 L153.7 99.6 L153.8 102.4 L153.7 105.3 L153.5 108.1 L153.1 111.0 L152.6 113.8 L152.0 116.6 L151.1 119.4 L150.2 122.1 L149.1 124.8 L147.8 127.4 L146.4 130.0 L144.9 132.4 L143.2 134.9 L141.4 137.2 L139.5 139.4 L137.5 141.6 L135.3 143.6 L133.1 145.5 L130.7 147.3 L128.2 149.0 L125.7 150.5 L123.0 151.9 L120.3 153.2 L117.5 154.4 L114.7 155.3 L111.7 156.2 L108.8 156.9 L105.8 157.4 L102.8 157.7 L99.7 158.0 L96.6 158.0 L93.6 157.9 L90.5 157.6 L87.4 157.2 L84.4 156.6 L81.4 155.8 L78.4 154.9 L75.5 153.8 L72.6 152.5 L69.8 151.1 L67.1 149.6 L64.5 147.9 L61.9 146.1 L59.4 144.1 L57.0 142.0 L54.8 139.8 L52.6 137.4 L50.6 134.9 L48.7 132.4 L46.9 129.7 L45.3 126.9 L43.9 124.0 L42.5 121.1 L41.4 118.1 L40.4 115.0 L39.5 111.9 L38.8 108.7 L38.3 105.4 L38.0 102.2 L37.8 98.9 L37.8 95.6 L38.0 92.3 L38.3 89.0 L38.9 85.8 L39.6 82.5 L40.4 79.3 L41.5 76.1 L42.7 73.0 L44.1 70.0 L45.6 67.0 L47.3 64.1 L49.2 61.3 L51.2 58.5 L53.3 55.9 L55.6 53.4 L58.0 51.0 L60.6 48.8 L63.3 46.7 L66.0 44.7 L68.9 42.8 L71.9 41.1 L75.0 39.6 L78.2 38.3 L81.5 37.1 L84.8 36.0 L88.1 35.2 L91.6 34.5 L95.0 34.0 L98.5 33.7 L102.0 33.6 L105.5 33.6 L109.0 33.9 L112.5 34.3 L116.0 34.9 L119.5 35.7 L122.9 36.7 L126.2 37.8 L129.6 39.2 L132.8 40.7 L135.9 42.4 L139.0 44.3 L142.0 46.3 L144.9 48.5 L147.6 50.8 L150.2 53.3 L152.7 55.9 L155.1 58.7 L157.3 61.6 L159.4 64.6 L161.3 67.7 L163.1 70.9 L164.6 74.2 L166.1 77.6 L167.3 81.1 L168.3 84.6 L169.2 88.2 L169.8 91.9 L170.3 95.6 L170.6 99.3 L170.7 103.0 L170.6 106.8 L170.2 110.5 L169.7 114.2 L169.0 117.9 L168.1 121.6 L167.0 125.2 L165.7 128.7 L164.2 132.2 L162.6 135.6 L160.7 139.0 L158.7 142.2 L156.5 145.3 L154.1 148.3 L151.6 151.2 L148.9 154.0 L146.1 156.6 L143.1 159.1 L140.0 161.4 L136.8 163.5 L133.5 165.5 L130.0 167.3 L126.5 168.9 L122.9 170.4"/></g></g>
+
+<text class="idle lbl" x="196" y="96" text-anchor="end">kx</text><text class="idle lbl" x="106" y="12">ky</text></g></svg></div></aside>
+    <div class="body"><div class="focus cards">
+      <article class="item glass lift"><span class="label-sm">University of Kent, 2024 to 2025</span><h3 style="margin-top:10px">MSc Healthcare Management, Distinction</h3>
+        <p>Dissertation: <em>From Pixels to Precision: Human-AI Synergy in Radiological Diagnostics</em>. A systematic review of 64 studies on how radiographers and AI can work together, and how AI might reduce diagnostic error while the radiographer stays central to clinical decisions.</p>
+        <div class="actions"><a class="btn" href="dissertation.html">Read the dissertation</a><span class="label-sm">Password needed, ask me for it</span></div>
+      </article>
+      <article class="item glass lift"><span class="label-sm">University of Lahore, 2018 to 2023</span><h3 style="margin-top:10px">BSc (Hons) Medical Imaging Technology</h3>
+        <p>Five-year programme, 172 credit hours. Accepted by the HCPC as equivalent to a UK diagnostic radiography degree.</p>
+      </article>
+      <article class="item paper glass lift"><span class="label-sm">Peer-reviewed paper, Journal of Neonatal Surgery, 2025</span><h3 style="margin-top:10px">CT Hounsfield Units and Cerebral Infarction Phases</h3>
+        <div class="actions"><a class="btn" href="https://doi.org/10.63682/jns.v14i7.5888" target="_blank" rel="noopener">Read the paper</a></div>
+      </article>
+      
+    </div></div>
+  </div>
+</section>
+
+<section class="sec split cpd" id="cpd" data-theme="light" data-label="CPD" style="padding-top:0">
+  <div class="wrap grid">
+    <aside class="aside"><div class="pin">
       <h2><span class="mask"><span>CPD</span></span></h2>
-      <p>Workshops, seminars and conferences, grouped by subject. Open a group to see the full list.</p>
-    </div>
-    <details open>
-      <summary>MRI and CT<span class="count">4 courses</span><span class="pm"></span></summary>
-      <ul>
-        <li>Hands-on MRI Workshop<span>University of Lahore (UIRSMIT), Oct 2022</span></li>
-        <li>Hands-on CT Scan Workshop<span>University of Lahore (UIRSMIT), Oct 2022</span></li>
-        <li>CT Imaging Procedures, focused on critical trauma cases<span>University of Lahore (UIRSMIT), Oct 2022</span></li>
-        <li>CT Image Reconstruction Techniques: From Basics to Advanced Applications, as organiser<span>Superior University, Lahore</span></li>
-      </ul>
-    </details>
-    <details>
-      <summary>Conferences and research<span class="count">5 events</span><span class="pm"></span></summary>
-      <ul>
-        <li>Poster presentation, 1st International Medical Imaging Conference (MICON'23)<span>Superior University, Lahore, Oct 2023</span></li>
-        <li>2nd International Conference on Advances in Allied Health Sciences: workshops on clinical judgement and radiology self-care<span>University of Lahore, Oct 2024</span></li>
-        <li>Foundations of Image Segmentation in Medical Imaging<span>University of Lahore (UIRSMIT), May 2024</span></li>
-        <li>International Day of Radiology<span>University of Lahore (UIRSMIT), Dec 2023</span></li>
-        <li>An Insight into Research Methodology<span>Afro-Asian Institute of Medical Sciences, Sep 2020</span></li>
-      </ul>
-    </details>
-    <details>
-      <summary>Quality, safety and wellbeing<span class="count">6 courses</span><span class="pm"></span></summary>
-      <ul>
-        <li>Quality Assurance in Pathology Labs<span>NHS NEQAS seminar, AIMC Lahore, Dec 2023</span></li>
-        <li>Data stewardship in radiology<span>University of Lahore (UIRSMIT), Jan 2022</span></li>
-        <li>Why Cervical Sonography Is Essential in Pregnancy<span>Afro-Asian Institute of Medical Sciences, Sep 2020</span></li>
-        <li>Identifying Anxiety and Stress: Impacts on Radiology Practice<span>CPD workshop, Dec 2023</span></li>
-        <li>Sustaining Radiology: Health Dynamics<span>University of Lahore, Dec 2022</span></li>
-        <li>Navigating Health Challenges in Radiology<span>Riphah International University and University of Lahore, Oct 2020</span></li>
-      </ul>
-    </details>
-    <div class="regs">
-      <div><span>HCPC</span>RA103288, valid to Feb 2028</div>
-      <div><span>CAHSP</span>PC-MT-7582-LHR-23</div>
-      <div><span>DBS</span>Enhanced</div>
-      <div><span>Life support</span>BLS, British Heart Foundation</div>
-      <div><span>PACS</span>ISRRT qualification</div>
-    </div>
-    <p class="note">Copies of certificates, CPD records and references are available on request. <a href="mailto:ibtsamkhalid5@gmail.com?subject=Certificate%20request">Email me to ask for them.</a></p>
-  </div>
-</section>
-
-
-<section class="contact grain" id="contact" data-label="Contact">
-  <div class="wrap">
-    <p class="kicker">I'm open to radiographer roles in the UK, especially ones with a CT and MRI rotation.</p>
-    <a class="mail" href="mailto:ibtsamkhalid5@gmail.com">ibtsamkhalid5@gmail.com</a>
-    <div class="foot">
-      <span>© 2026 Muhammad Ibtsam Khalid</span>
-      <a href="https://www.linkedin.com/in/muhammad-ibtsam-khalid" target="_blank" rel="noopener">LinkedIn</a>
-      <button type="button" class="totop">Back to top</button>
+      <p>Courses, workshops and conferences, grouped by subject and newest first. Open a group to see the full list.</p>
+      <span class="meta-line">18 activities since 2020</span>
+    <svg class="draw" viewBox="0 0 220 220" aria-hidden="true"><g transform="translate(0 8)">
+<g class="ln"><path pathLength="1" class="faint" style="--i:0" d="M30 36 H192 M30 71 H192 M30 106 H192 M30 141 H192 M62 176 V36 M94 176 V36 M126 176 V36 M158 176 V36 M190 176 V36"/><path pathLength="1" class="" style="--i:1" d="M30 26 V176 H200"/><path pathLength="1" class="soft" style="--i:1" d="M30 176 V181 M46 176 V181 M62 176 V181 M78 176 V181 M94 176 V181 M110 176 V181 M126 176 V181 M142 176 V181 M158 176 V181 M174 176 V181 M190 176 V181 M25 36 H30 M25 50 H30 M25 64 H30 M25 78 H30 M25 92 H30 M25 106 H30 M25 120 H30 M25 134 H30 M25 148 H30 M25 162 H30 M25 176 H30"/><path pathLength="1" class="" style="--i:2" d="M30.0 36.0 L31.6 40.9 L33.2 45.7 L34.8 50.2 L36.4 54.6 L38.0 58.9 L39.6 63.0 L41.2 67.0 L42.8 70.8 L44.4 74.5 L46.0 78.0 L47.6 81.5 L49.2 84.8 L50.8 88.0 L52.4 91.1 L54.0 94.1 L55.6 96.9 L57.2 99.7 L58.8 102.4 L60.4 105.0 L62.0 107.5 L63.6 109.9 L65.2 112.2 L66.8 114.4 L68.4 116.6 L70.0 118.7 L71.6 120.7 L73.2 122.6 L74.8 124.5 L76.4 126.3 L78.0 128.0 L79.6 129.7 L81.2 131.4 L82.8 132.9 L84.4 134.4 L86.0 135.9 L87.6 137.3 L89.2 138.7 L90.8 140.0 L92.4 141.2 L94.0 142.4 L95.6 143.6 L97.2 144.8 L98.8 145.9 L100.4 146.9 L102.0 147.9 L103.6 148.9 L105.2 149.9 L106.8 150.8 L108.4 151.7 L110.0 152.5 L111.6 153.3 L113.2 154.1 L114.8 154.9 L116.4 155.7 L118.0 156.4 L119.6 157.1 L121.2 157.7 L122.8 158.4 L124.4 159.0 L126.0 159.6 L127.6 160.2 L129.2 160.7 L130.8 161.2 L132.4 161.8 L134.0 162.3 L135.6 162.7 L137.2 163.2 L138.8 163.7 L140.4 164.1 L142.0 164.5 L143.6 164.9 L145.2 165.3 L146.8 165.7 L148.4 166.0 L150.0 166.4 L151.6 166.7 L153.2 167.1 L154.8 167.4 L156.4 167.7 L158.0 168.0 L159.6 168.2 L161.2 168.5 L162.8 168.8 L164.4 169.0 L166.0 169.3 L167.6 169.5 L169.2 169.7 L170.8 170.0 L172.4 170.2 L174.0 170.4 L175.6 170.6 L177.2 170.8 L178.8 170.9 L180.4 171.1 L182.0 171.3 L183.6 171.5 L185.2 171.6 L186.8 171.8 L188.4 171.9 L190.0 172.1"/><path pathLength="1" class="soft" style="--i:3" d="M30.0 176.0 L31.6 171.7 L33.2 167.5 L34.8 163.5 L36.4 159.5 L38.0 155.7 L39.6 152.1 L41.2 148.5 L42.8 145.0 L44.4 141.7 L46.0 138.4 L47.6 135.3 L49.2 132.2 L50.8 129.3 L52.4 126.4 L54.0 123.6 L55.6 120.9 L57.2 118.3 L58.8 115.8 L60.4 113.3 L62.0 110.9 L63.6 108.6 L65.2 106.4 L66.8 104.2 L68.4 102.1 L70.0 100.1 L71.6 98.1 L73.2 96.2 L74.8 94.4 L76.4 92.6 L78.0 90.8 L79.6 89.1 L81.2 87.5 L82.8 85.9 L84.4 84.4 L86.0 82.9 L87.6 81.5 L89.2 80.1 L90.8 78.7 L92.4 77.4 L94.0 76.1 L95.6 74.9 L97.2 73.7 L98.8 72.5 L100.4 71.4 L102.0 70.3 L103.6 69.3 L105.2 68.2 L106.8 67.2 L108.4 66.3 L110.0 65.3 L111.6 64.4 L113.2 63.6 L114.8 62.7 L116.4 61.9 L118.0 61.1 L119.6 60.3 L121.2 59.6 L122.8 58.9 L124.4 58.2 L126.0 57.5 L127.6 56.8 L129.2 56.2 L130.8 55.5 L132.4 54.9 L134.0 54.4 L135.6 53.8 L137.2 53.3 L138.8 52.7 L140.4 52.2 L142.0 51.7 L143.6 51.2 L145.2 50.8 L146.8 50.3 L148.4 49.9 L150.0 49.4 L151.6 49.0 L153.2 48.6 L154.8 48.2 L156.4 47.9 L158.0 47.5 L159.6 47.1 L161.2 46.8 L162.8 46.5 L164.4 46.1 L166.0 45.8 L167.6 45.5 L169.2 45.2 L170.8 44.9 L172.4 44.7 L174.0 44.4 L175.6 44.1 L177.2 43.9 L178.8 43.7 L180.4 43.4 L182.0 43.2 L183.6 43.0 L185.2 42.8 L186.8 42.5 L188.4 42.3 L190.0 42.2"/>
+<path pathLength="1" class="dash" style="--i:4" d="M30 124.2 H74.8 V176"/></g>
+<g class="idle"><circle class="pulse" style="--k:0" cx="30.0" cy="36.0" r="2.4"/><circle class="pulse" style="--k:1" cx="46.0" cy="78.0" r="2.4"/><circle class="pulse" style="--k:2" cx="62.0" cy="107.5" r="2.4"/><circle class="pulse" style="--k:3" cx="81.2" cy="131.4" r="2.4"/><circle class="pulse" style="--k:4" cx="103.6" cy="148.9" r="2.4"/><circle class="pulse" style="--k:5" cx="129.2" cy="160.7" r="2.4"/><circle class="pulse" style="--k:6" cx="158.0" cy="168.0" r="2.4"/><circle class="pulse" style="--k:7" cx="190.0" cy="172.1" r="2.4"/></g>
+<text class="idle lbl" x="200" y="198" text-anchor="end">T1 · T2</text></g></svg></div></aside>
+    <div class="body">
+      <details class="has-rule" open>
+        <summary>Recent courses<span class="count">3 courses</span><span class="pm"></span></summary>
+        <div class="panel"><ul>
+          <li><b>Radiation Protection</b><span>ISRRT, Mar 2026</span></li>
+          <li><b>Introduction to Picture Archiving and Communication Systems (PACS)</b><span>ISRRT, Mar 2026</span></li>
+          <li><b>Osteoporosis and DXA Scanning</b><span>ISRRT, Mar 2026</span></li>
+        </ul></div>
+      </details>
+      <details class="has-rule">
+        <summary>MRI and CT<span class="count">4 courses</span><span class="pm"></span></summary>
+        <div class="panel"><ul>
+          <li><b>Hands-on MRI Workshop</b><span>University of Lahore (UIRSMIT), Oct 2022</span></li>
+          <li><b>Hands-on CT Scan Workshop</b><span>University of Lahore (UIRSMIT), Oct 2022</span></li>
+          <li><b>CT Imaging Procedures, focused on critical trauma cases</b><span>University of Lahore (UIRSMIT), Oct 2022</span></li>
+          <li><b>CT Image Reconstruction Techniques: From Basics to Advanced Applications, as organiser</b><span>Superior University, Lahore</span></li>
+        </ul></div>
+      </details>
+      <details class="has-rule">
+        <summary>Conferences and research<span class="count">5 events</span><span class="pm"></span></summary>
+        <div class="panel"><ul>
+          <li><b>Poster presentation, 1st International Medical Imaging Conference (MICON'23)</b><span>Superior University, Lahore, Oct 2023</span></li>
+          <li><b>2nd International Conference on Advances in Allied Health Sciences: workshops on clinical judgement and radiology self-care</b><span>University of Lahore, Oct 2024</span></li>
+          <li><b>Foundations of Image Segmentation in Medical Imaging</b><span>University of Lahore (UIRSMIT), May 2024</span></li>
+          <li><b>International Day of Radiology</b><span>University of Lahore (UIRSMIT), Dec 2023</span></li>
+          <li><b>An Insight into Research Methodology</b><span>Afro-Asian Institute of Medical Sciences, Sep 2020</span></li>
+        </ul></div>
+      </details>
+      <details class="has-rule">
+        <summary>Quality, safety and wellbeing<span class="count">6 courses</span><span class="pm"></span></summary>
+        <div class="panel"><ul>
+          <li><b>Quality Assurance in Pathology Labs</b><span>NHS NEQAS seminar, AIMC Lahore, Dec 2023</span></li>
+          <li><b>Identifying Anxiety and Stress: Impacts on Radiology Practice</b><span>CPD workshop, Dec 2023</span></li>
+          <li><b>Sustaining Radiology: Health Dynamics</b><span>University of Lahore, Dec 2022</span></li>
+          <li><b>Data stewardship in radiology</b><span>University of Lahore (UIRSMIT), Jan 2022</span></li>
+          <li><b>Navigating Health Challenges in Radiology</b><span>Riphah International University and University of Lahore, Oct 2020</span></li>
+          <li><b>Why Cervical Sonography Is Essential in Pregnancy</b><span>Afro-Asian Institute of Medical Sciences, Sep 2020</span></li>
+        </ul></div>
+      </details>
+      <div class="end-rule has-rule"></div>
+      <div class="regs has-rule">
+        <div><span>HCPC</span>RA103288, valid to Feb 2028</div>
+        <div><span>CAHSP</span>PC-MT-7582-LHR-23, valid to Dec 2027</div>
+        <div><span>DBS</span>Enhanced</div>
+        <div><span>Frameworks</span>IR(ME)R 2017</div>
+      </div>
+      <p class="request lift">Copies of certificates, CPD records and references are available on request. <a class="u-line" href="mailto:ibtsamkhalid5@gmail.com?subject=Certificate%20request">Email me to ask for them</a></p>
     </div>
   </div>
 </section>
 </main>
 
+
+<section class="contact" id="contact" data-theme="light" data-label="Contact">
+  <div class="wrap"><div class="glass contact-card lift">
+    <p class="kicker">Open to MRI, CT and diagnostic radiographer roles in the UK, especially ones with a CT and MRI rotation.</p>
+    <a class="mail magnetic" href="mailto:ibtsamkhalid5@gmail.com">ibtsamkhalid5@gmail.com</a>
+    <div class="links">
+      <a class="btn magnetic" href="https://www.linkedin.com/in/muhammad-ibtsam-khalid" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn magnetic" href="mailto:ibtsamkhalid5@gmail.com">Send an email</a>
+    </div>
+    <div class="foot">
+      <span>© 2026 Muhammad Ibtsam Khalid</span>
+      <span>London, United Kingdom</span>
+      <button type="button" class="totop u-line">Back to top</button>
+    </div>
+  </div></div>
+</section>
+
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 (() => {
+  const html = document.documentElement;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const desktop = matchMedia('(min-width: 1001px)').matches;
+  const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const hasGsap = window.gsap && window.ScrollTrigger;
 
-  // split hero name into characters (the h1 keeps an aria-label for screen readers)
+  // add a drawable rule to every block that has one
+  document.querySelectorAll('.has-rule').forEach(el => { const r = document.createElement('i'); r.className = 'rule'; el.prepend(r); });
+  // split hero name into characters, statement into words
   document.querySelectorAll('.hero h1 .line').forEach(line => {
     line.innerHTML = [...line.textContent].map(c => c === ' ' ? ' ' : `<span class="ch">${c}</span>`).join('');
   });
-  // split statement into words
   const lit = document.querySelector('.lit-text');
   lit.innerHTML = lit.textContent.trim().split(/\s+/).map(w => `<span class="w">${w}</span>`).join(' ');
 
-  let lenis = null;
-  document.querySelector('.totop').addEventListener('click', () =>
-    lenis ? lenis.scrollTo(0, { duration: 1.6 }) : scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }));
+  // page tone follows the section at the middle of the screen
+  const themed = [...document.querySelectorAll('section[data-theme]')];
+  const nav = document.querySelector('.nav'), hero = document.querySelector('.hero');
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      const mid = innerHeight * .5;
+      for (const s of themed) { const r = s.getBoundingClientRect(); if (r.top <= mid && r.bottom > mid) { if (html.dataset.theme !== s.dataset.theme) html.dataset.theme = s.dataset.theme; break; } }
+      nav.classList.toggle('on-hero', hero.getBoundingClientRect().bottom > 60);
+    });
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-  if (!hasGsap || reduce) { document.documentElement.classList.remove('anim'); return; }
+  document.querySelector('.totop').addEventListener('click', () => scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }));
+  document.querySelector('a[href="#contact"]').addEventListener('click', e => { e.preventDefault(); scrollTo({ top: document.documentElement.scrollHeight, behavior: reduce ? 'auto' : 'smooth' }); });
+
+  if (!hasGsap || reduce) { html.classList.remove('anim'); document.querySelectorAll('.draw, .hero-art').forEach(d => d.classList.add('drawn')); return; }   // fully readable, no motion
   window.__intro = true;
   gsap.registerPlugin(ScrollTrigger);
-  const ease = 'expo.out';
-
-  // ---------- smooth scrolling ----------
-  if (window.Lenis) {
-    lenis = new Lenis({ duration: 1.1, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothTouch: false });
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add(t => lenis.raf(t * 1000));
-    gsap.ticker.lagSmoothing(0);
-    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
-      const id = a.getAttribute('href'); if (id.length < 2) return;
-      e.preventDefault(); lenis.scrollTo(id, { duration: 1.6 });
-    }));
-  }
+  gsap.defaults({ ease: 'expo.out', duration: 1 });
 
   // ---------- nav hides going down, returns going up ----------
-  const nav = document.querySelector('.nav'); let lastY = 0;
-  ScrollTrigger.create({ onUpdate: s => { const y = s.scroll(); nav.classList.toggle('hide', y > lastY && y > 200); lastY = y; } });
+  let lastY = scrollY;
+  addEventListener('scroll', () => { const y = scrollY; nav.classList.toggle('hide', y > lastY && y > 240); lastY = y; }, { passive: true });
+
+  // ---------- cursor ring + magnetic links ----------
+  if (finePointer && desktop) {
+    const pos = document.querySelector('.cursor-pos'), ring = pos.firstElementChild;
+    const xTo = gsap.quickTo(pos, 'x', { duration: .45, ease: 'power3' }), yTo = gsap.quickTo(pos, 'y', { duration: .45, ease: 'power3' });
+    addEventListener('mousemove', e => { ring.classList.add('on'); xTo(e.clientX); yTo(e.clientY); }, { passive: true });
+    document.addEventListener('mouseleave', () => ring.classList.remove('on'));
+    document.querySelectorAll('a, button, summary').forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('big'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+    });
+    document.querySelectorAll('.magnetic').forEach(el => {
+      const mx = gsap.quickTo(el, 'x', { duration: .6, ease: 'power3' }), my = gsap.quickTo(el, 'y', { duration: .6, ease: 'power3' });
+      el.addEventListener('mousemove', e => { const r = el.getBoundingClientRect(); mx((e.clientX - r.left - r.width / 2) * .2); my((e.clientY - r.top - r.height / 2) * .3); });
+      el.addEventListener('mouseleave', () => { mx(0); my(0); });
+    });
+
+    // the name responds to the pointer: letters near it grow heavier
+    const chars = [...document.querySelectorAll('.hero .ch')];
+    const h1 = document.querySelector('.hero h1');
+    let rects = [];
+    const measure = () => { rects = chars.map(c => { const r = c.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; }); };
+    h1.addEventListener('mouseenter', measure);
+    h1.addEventListener('mousemove', e => {
+      chars.forEach((c, i) => {
+        const d = Math.hypot(e.clientX - rects[i][0], (e.clientY - rects[i][1]) * 1.4);
+        gsap.to(c, { '--w': 250 + Math.max(0, 1 - d / 260) * 400, duration: .5, ease: 'power2.out', overwrite: 'auto' });
+      });
+    });
+    h1.addEventListener('mouseleave', () => gsap.to(chars, { '--w': 250, duration: .9, ease: 'power3.out', overwrite: 'auto' }));
+  }
 
   // ---------- opening sequence ----------
   const loader = document.querySelector('.loader');
   const counter = { v: 0 };
   gsap.set('.hero .ch', { yPercent: 110 });
-  gsap.set('.hero .meta', { opacity: 0, y: 20 });
-  gsap.set('.hero .bg', { clipPath: 'inset(100% 0 0 0)' });
-  gsap.set('.hero .bg img', { scale: 1.3 });
+  gsap.set('.hero .meta > *', { opacity: 0, y: 18 });
   gsap.timeline({ onComplete: () => loader.remove() })
-    .to(counter, { v: 100, duration: 1.3, ease: 'power2.inOut', onUpdate: () => loader.querySelector('.count').textContent = Math.round(counter.v) })
-    .to('.loader .bar', { scaleX: 1, duration: 1.3, ease: 'power2.inOut' }, 0)
-    .to(loader, { yPercent: -100, duration: 1.1, ease: 'expo.inOut' }, '+=.1')
-    .to('.hero .bg', { clipPath: 'inset(0% 0 0 0)', duration: 1.6, ease: 'expo.inOut' }, '-=.9')
-    .to('.hero .bg img', { scale: 1, duration: 2.4, ease }, '<')
-    .to('.hero .ch', { yPercent: 0, duration: 1.3, ease, stagger: .028 }, '-=1.7')
-    .to('.hero .meta', { opacity: 1, y: 0, duration: 1.2, ease }, '-=.9');
+    .to(counter, { v: 100, duration: 1.05, ease: 'power2.inOut', onUpdate: () => loader.querySelector('.count').textContent = Math.round(counter.v) })
+    .to('.loader .bar', { scaleX: 1, duration: 1.05, ease: 'power2.inOut' }, 0)
+    .to(loader, { yPercent: -100, duration: .9, ease: 'expo.inOut' }, '+=.05')
+    .add(() => document.querySelector('.hero-art').classList.add('drawn'), '-=.6')
+    .to('.hero .ch', { yPercent: 0, duration: 1.1, stagger: .022 }, '-=1.4')
+    .to('.hero .meta > *', { opacity: 1, y: 0, duration: .9, stagger: .06 }, '-=.8');
 
-  gsap.to('.hero .bg img', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
-  gsap.to('.hero h1', { yPercent: -30, opacity: .25, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'center center', end: 'bottom top', scrub: true } });
+  gsap.to('.hero-art', { yPercent: 8, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('.hero .wrap', { yPercent: -18, opacity: .3, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'center center', end: 'bottom top', scrub: true } });
 
-  // ---------- statement lights up word by word ----------
-  gsap.fromTo('.lit-text .w', { opacity: .16 }, { opacity: 1, stagger: .1, ease: 'none',
-    scrollTrigger: { trigger: '.statement', start: 'top 70%', end: 'bottom 60%', scrub: .6 } });
+  // ---------- statement: words brighten as you read ----------
+  gsap.fromTo('.lit-text .w', { opacity: .15 }, { opacity: 1, stagger: .1, ease: 'none',
+    scrollTrigger: { trigger: '.statement', start: 'top 72%', end: 'bottom 58%', scrub: .5 } });
 
   // ---------- headings rise out of a mask ----------
   document.querySelectorAll('.mask > span').forEach(s => {
-    gsap.from(s, { yPercent: 105, duration: 1.4, ease, scrollTrigger: { trigger: s.closest('h2'), start: 'top 88%', once: true } });
+    gsap.from(s, { yPercent: 105, duration: 1.2, scrollTrigger: { trigger: s.closest('h2'), start: 'top 88%', once: true } });
   });
-  gsap.utils.toArray('.sec .head p').forEach(p => {
-    gsap.from(p, { opacity: 0, y: 16, duration: 1.2, ease, delay: .25, scrollTrigger: { trigger: p, start: 'top 90%', once: true } });
+  gsap.utils.toArray('.aside p, .aside .meta-line').forEach(p => {
+    gsap.from(p, { opacity: 0, y: 14, duration: 1, delay: .15, scrollTrigger: { trigger: p, start: 'top 92%', once: true } });
   });
 
-  // ---------- the scan: every block is acquired top to bottom ----------
-  const blocks = gsap.utils.toArray('.figures .wrap, .row, .role, .scope > div, .edu > div, .paper, .cpd details, .regs, .note, .contact .kicker, .contact .mail');
+  // ---------- one entrance for every block: the rule draws, the content follows ----------
+  const blocks = gsap.utils.toArray('.has-rule, .lift');
   blocks.forEach(el => {
-    const line = document.createElement('i');
-    line.className = 'scan-line';
-    if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
-    el.appendChild(line);
-    el.classList.add('scanning');
-    gsap.set(el, { '--p': 0 });
+    const rule = el.querySelector(':scope > .rule');
+    if (rule) gsap.set(rule, { scaleX: 0 });
+    gsap.set([...el.children].filter(c => !c.classList.contains('rule')), { opacity: 0, y: 22 });
   });
   ScrollTrigger.batch(blocks, {
-    start: 'top 90%', once: true,
+    start: 'top 92%', once: true, interval: .08, batchMax: 6,
     onEnter: batch => batch.forEach((el, i) => {
-      const line = el.querySelector(':scope > .scan-line');
-      gsap.timeline({ delay: i * .12, onComplete: () => { el.classList.remove('scanning'); line.remove(); } })
-        .set(line, { opacity: 1 })
-        .to(el, { '--p': 100, duration: 1.15, ease: 'power3.inOut' })
-        .to(line, { opacity: 0, duration: .35 }, '-=.2');
+      const rule = el.querySelector(':scope > .rule');
+      const kids = [...el.children].filter(c => !c.classList.contains('rule'));
+      if (rule) gsap.to(rule, { scaleX: 1, duration: 1.1, ease: 'expo.inOut', delay: i * .07 });
+      gsap.to(kids, { opacity: 1, y: 0, duration: .9, stagger: .05, delay: .15 + i * .07, clearProps: 'transform' });
     })
   });
 
-  // ---------- counters run once the figures are scanned in ----------
+  // ---------- counters ----------
   document.querySelectorAll('[data-count]').forEach(el => {
     const end = +el.dataset.count, from = +(el.dataset.from || 0), o = { v: from };
     const fmt = v => el.dataset.format === 'comma' ? Math.round(v).toLocaleString('en-GB') : Math.round(v);
     el.textContent = fmt(from);
-    gsap.to(o, { v: end, duration: 2.2, delay: .4, ease: 'power3.out', onUpdate: () => el.textContent = fmt(o.v),
+    gsap.to(o, { v: end, duration: 1.8, delay: .3, ease: 'power3.out', onUpdate: () => el.textContent = fmt(o.v),
       scrollTrigger: { trigger: '.figures', start: 'top 90%', once: true } });
   });
 
-  // ---------- CPD groups open and close smoothly ----------
+  // ---------- CPD groups open and close ----------
   document.querySelectorAll('.cpd details').forEach(d => {
-    const s = d.querySelector('summary'), ul = d.querySelector('ul');
-    let busy = false;
+    const s = d.querySelector('summary'), panel = d.querySelector('.panel'); let busy = false;
     s.addEventListener('click', e => {
       e.preventDefault(); if (busy) return; busy = true;
       if (d.open) {
-        gsap.to(ul, { height: 0, opacity: 0, duration: .55, ease: 'power3.inOut', onComplete: () => { d.open = false; gsap.set(ul, { clearProps: 'all' }); busy = false; ScrollTrigger.refresh(); } });
+        gsap.to(panel, { height: 0, duration: .5, ease: 'power3.inOut', onComplete: () => { d.open = false; gsap.set(panel, { clearProps: 'height' }); busy = false; ScrollTrigger.refresh(); } });
       } else {
         d.open = true;
-        gsap.from(ul, { height: 0, opacity: 0, duration: .75, ease: 'expo.out', onComplete: () => { busy = false; ScrollTrigger.refresh(); } });
-        gsap.from(ul.querySelectorAll('li'), { y: 12, opacity: 0, duration: .6, ease, stagger: .035 });
+        gsap.from(panel, { height: 0, duration: .65, ease: 'power3.out', onComplete: () => { busy = false; ScrollTrigger.refresh(); } });
+        gsap.from(panel.querySelectorAll('li'), { opacity: 0, y: 10, duration: .5, stagger: .03, delay: .1 });
       }
     });
   });
 
-  // ---------- section indicator, bottom left ----------
-  const where = document.querySelector('.where'), label = where.querySelector('.label span'), bar = where.querySelector('.track i');
-  ScrollTrigger.create({ trigger: '.statement', start: 'top 60%', onEnter: () => where.classList.add('on'), onLeaveBack: () => where.classList.remove('on') });
-  gsap.to(bar, { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: .3 } });
-  const swap = text => {
-    if (label.textContent === text) return;
-    gsap.to(label, { yPercent: -100, duration: .3, ease: 'power2.in', onComplete: () => {
-      label.textContent = text; gsap.fromTo(label, { yPercent: 100 }, { yPercent: 0, duration: .5, ease });
-    } });
-  };
-  document.querySelectorAll('[data-label]').forEach(sec => {
-    ScrollTrigger.create({ trigger: sec, start: 'top 50%', end: 'bottom 50%',
-      onEnter: () => swap(sec.dataset.label), onEnterBack: () => swap(sec.dataset.label) });
+  // ---------- glass: soft highlight follows the pointer; glows drift with scroll ----------
+  if (finePointer) document.querySelectorAll('.glass').forEach(g => g.addEventListener('pointermove', e => {
+    const r = g.getBoundingClientRect(); g.style.setProperty('--mx', (e.clientX - r.left) + 'px'); g.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }));
+  gsap.to('.glows .g1', { yPercent: 60, xPercent: 20, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 1 } });
+  gsap.to('.glows .g2', { yPercent: -50, xPercent: -15, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 1 } });
+  gsap.to('.glows .g3', { yPercent: -70, xPercent: -25, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 1 } });
+
+  // ---------- line drawings draw themselves once, then idle gently ----------
+  document.querySelectorAll('.draw').forEach(svg => {
+    ScrollTrigger.create({ trigger: svg, start: 'top 85%', once: true, onEnter: () => svg.classList.add('drawn') });
   });
 
-  // keep every trigger accurate once fonts and the hero photo have loaded
   document.fonts && document.fonts.ready.then(() => ScrollTrigger.refresh());
   addEventListener('load', () => ScrollTrigger.refresh());
 })();
