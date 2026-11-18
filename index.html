@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Ibtsam Khalid | Diagnostic Radiographer</title>
+<meta name="description" content="HCPC registered Diagnostic Radiographer with experience in MRI, CT, general and trauma radiography. MSc Healthcare Management (Distinction), University of Kent.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14213d; --muted:#5b6478; --line:#dde2ea; --bg:#f7f8fa; --card:#ffffff;
+    --accent:#0f766e; --accent-soft:#e6f2f1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
+  a{color:var(--accent)}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+
+  nav{position:sticky;top:0;background:rgba(247,248,250,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  nav .brand{font-family:Fraunces,serif;font-weight:600;text-decoration:none;color:var(--ink)}
+  nav ul{display:flex;gap:22px;list-style:none}
+  nav ul a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500}
+  nav ul a:hover{color:var(--accent)}
+
+  header{padding:88px 0 64px}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px;margin-bottom:22px}
+  h1{font-family:Fraunces,serif;font-weight:600;font-size:clamp(36px,6vw,58px);line-height:1.08;letter-spacing:-.01em;margin-bottom:18px}
+  .lead{font-size:19px;color:var(--muted);max-width:640px;margin-bottom:30px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 20px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink);background:var(--card)}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:56px}
+  .stat{background:var(--card);padding:20px}
+  .stat b{display:block;font-family:Fraunces,serif;font-size:28px;font-weight:600}
+  .stat span{font-size:13px;color:var(--muted)}
+
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  h2{font-family:Fraunces,serif;font-weight:600;font-size:30px;margin-bottom:28px}
+  h3{font-size:17px;font-weight:600}
+  .about p{max-width:720px;margin-bottom:14px;color:#2b3550}
+
+  .job{display:grid;grid-template-columns:190px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line)}
+  .job:last-child{border-bottom:none}
+  .when{font-size:14px;color:var(--muted);font-weight:500}
+  .org{color:var(--accent);font-weight:500;font-size:15px;margin-bottom:8px}
+  .job ul{padding-left:18px;color:#2b3550}
+  .job li{margin-bottom:4px}
+  .tag{display:inline-block;font-size:12px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 9px;margin-left:8px;vertical-align:middle}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .card h3{margin-bottom:10px}
+  .card ul{list-style:none;color:#2b3550;font-size:15px}
+  .card li{padding:5px 0;border-bottom:1px dashed var(--line)}
+  .card li:last-child{border-bottom:none}
+
+  .cpd li{padding:8px 0}
+  .cpd small{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+  .edu{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .edu .card p{color:var(--muted);font-size:15px;margin-top:6px}
+  .pub{margin-top:18px;background:var(--accent-soft);border-color:#c9e3e0}
+
+  .creds{display:flex;flex-wrap:wrap;gap:10px}
+  .creds span{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 14px;font-size:14px}
+
+  .contact{text-align:center}
+  .contact p{color:var(--muted);margin-bottom:24px}
+  .contact .btns{justify-content:center}
+  footer{padding:32px 0;text-align:center;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+
+  @media (max-width:760px){
+    nav ul{display:none}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .job{grid-template-columns:1fr;gap:6px}
+    .grid,.edu{grid-template-columns:1fr}
+    header{padding:56px 0 40px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">M. Ibtsam Khalid</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#cpd">CPD</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">HCPC Registered · RA103288</span>
+    <h1>Muhammad Ibtsam Khalid<br>Diagnostic Radiographer</h1>
+    <p class="lead">I work across MRI, CT and general radiography, and I'm building towards a career specialising in MRI. Full UK right to work, no sponsorship needed.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:ibtsamkhalid5@gmail.com">Get in touch</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/muhammad-ibtsam-khalid" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>1,728</b><span>certified clinical hours</span></div>
+      <div class="stat"><b>10</b><span>imaging modalities trained</span></div>
+      <div class="stat"><b>15% → 11%</b><span>repeat rate, QI project</span></div>
+      <div class="stat"><b>MSc</b><span>Distinction, Univ. of Kent</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>I trained in Pakistan, where I spent five years at the University of Lahore and its teaching hospital. The hospital runs around the clock, so I got experience in A&amp;E, trauma, ICU mobiles and outpatient lists. After a year qualified there, I came to the UK for an MSc in Healthcare Management. I wanted to understand how the NHS works as a whole organisation, not just how its imaging departments run.</p>
+    <p>Since then I've gained HCPC registration and arranged my own observership at Maidstone and Tunbridge Wells NHS Trust. I now work as a bank MRI radiographer. My aim is to specialise in MRI and, in the longer term, train as a reporting radiographer.</p>
+    <p>I love this work. Helping patients through a scan, especially ones who are frightened or in pain, is the reason I chose radiography.</p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="when">Sep 2026 – present</div>
+      <div>
+        <h3>Bank MRI Radiographer</h3>
+        <div class="org">Chartwell Private Hospital</div>
+        <ul>
+          <li>Scanning on my own on a Siemens 1.5T MRI scanner</li>
+          <li>Mixed caseload: brain, spine, shoulder, knee, hip and ankle</li>
+          <li>Working within the hospital's MRI safety and patient-screening workflow</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Mar 2026 – Sep 2026</div>
+      <div>
+        <h3>Student Radiographer Observership <span class="tag">Self-arranged</span></h3>
+        <div class="org">Maidstone and Tunbridge Wells NHS Trust</div>
+        <ul>
+          <li>Observed A&amp;E, theatres, CT and nuclear medicine</li>
+          <li>Studied how IR(ME)R 2017 works in NHS practice: justification, authorisation and dose monitoring</li>
+          <li>Followed the NHS patient pathway through booking, vetting and reporting on RIS and PACS</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Nov 2025 – present</div>
+      <div>
+        <h3>Young Futures Concierge</h3>
+        <div class="org">YMCA Thames Gateway</div>
+        <ul>
+          <li>Ofsted-regulated residential care supporting looked-after young people aged 16–17</li>
+          <li>Perfect attendance record since starting</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Aug 2023 – Aug 2024</div>
+      <div>
+        <h3>Diagnostic Radiographer (Rotational)</h3>
+        <div class="org">University of Lahore Teaching Hospital</div>
+        <ul>
+          <li>Rotated across X-ray, CT and ultrasound, doing 10–15 examinations a day</li>
+          <li>Helped lead a quality improvement project that cut the repeat imaging rate from 15% to 11% in three months</li>
+          <li>Kept recall rates low on mobile and ICU imaging of unstable patients</li>
+          <li>Helped train junior staff and gave a CT teaching session to the radiography team</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Aug 2019 – Aug 2023</div>
+      <div>
+        <h3>Clinical Placement (BSc)</h3>
+        <div class="org">University of Lahore Teaching Hospital</div>
+        <ul>
+          <li>1,728 certified clinical hours across 10 imaging modalities</li>
+          <li>Rotational training in general, A&amp;E, mobile, theatre, CT, MRI, ultrasound, nuclear medicine, mammography and interventional radiology</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Clinical skills</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Independent practice</h3>
+        <ul>
+          <li>MRI (1.5T)</li>
+          <li>CT</li>
+          <li>General radiography</li>
+          <li>A&amp;E and trauma imaging</li>
+          <li>Mobile and ICU imaging</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Trained during placements</h3>
+        <ul>
+          <li>Theatre and fluoroscopy</li>
+          <li>Ultrasound</li>
+          <li>Mammography</li>
+          <li>Nuclear medicine</li>
+          <li>Interventional radiology</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Equipment and systems</h3>
+        <ul>
+          <li>Siemens 1.5T MRI</li>
+          <li>Canon Aquilion CT</li>
+          <li>Fujifilm FDR and CR</li>
+          <li>Samsung mobile units</li>
+          <li>Philips fluoroscopy and EPIQ ultrasound</li>
+          <li>PACS, RIS and EPR</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education and research</h2>
+    <div class="edu">
+      <div class="card">
+        <h3>MSc Healthcare Management, Distinction</h3>
+        <p>University of Kent · 2024–2025</p>
+        <p>Dissertation: <em>From Pixels to Precision: Human-AI Synergy in Radiological Diagnostics</em>. A systematic review of 64 studies on how radiographers and artificial intelligence can work together in diagnostic imaging, and how AI might reduce radiological error while the radiographer stays central to clinical decisions.</p>
+        <p><a href="dissertation.html">Read the dissertation</a> (password needed, ask me for it)</p>
+      </div>
+      <div class="card">
+        <h3>BSc (Hons) Medical Imaging Technology</h3>
+        <p>University of Lahore · 2018–2023</p>
+        <p>Five-year programme, 172 credit hours. Accepted by the HCPC as equivalent to a UK diagnostic radiography degree.</p>
+      </div>
+    </div>
+    <div class="card pub">
+      <h3>Publication</h3>
+      <p style="color:#2b3550;margin-top:6px">"CT Hounsfield Units and Cerebral Infarction Phases." <em>Journal of Neonatal Surgery</em>, 2025. <a href="https://doi.org/10.63682/jns.v14i7.5888" target="_blank" rel="noopener">doi.org/10.63682/jns.v14i7.5888</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="cpd">
+  <div class="wrap">
+    <h2>Continuing professional development</h2>
+    <div class="grid cpd">
+      <div class="card">
+        <h3>MRI and CT</h3>
+        <ul>
+          <li>Hands-on MRI Workshop<small>University of Lahore (UIRSMIT) · Oct 2022</small></li>
+          <li>Hands-on CT Scan Workshop<small>University of Lahore (UIRSMIT) · Oct 2022</small></li>
+          <li>CT Imaging Procedures, focused on critical trauma cases<small>University of Lahore (UIRSMIT) · Oct 2022</small></li>
+          <li>CT Image Reconstruction Techniques: From Basics to Advanced Applications, as organiser<small>Superior University, Lahore</small></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Conferences and research</h3>
+        <ul>
+          <li>Poster presentation, 1st International Medical Imaging Conference (MICON'23)<small>Superior University, Lahore · Oct 2023</small></li>
+          <li>2nd International Conference on Advances in Allied Health Sciences: workshops on clinical judgement and radiology self-care<small>University of Lahore · Oct 2024</small></li>
+          <li>Foundations of Image Segmentation in Medical Imaging<small>University of Lahore (UIRSMIT) · May 2024</small></li>
+          <li>International Day of Radiology<small>University of Lahore (UIRSMIT) · Dec 2023</small></li>
+          <li>An Insight into Research Methodology<small>Afro-Asian Institute of Medical Sciences · Sep 2020</small></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Quality, safety and wellbeing</h3>
+        <ul>
+          <li>Quality Assurance in Pathology Labs<small>NHS NEQAS seminar, AIMC Lahore · Dec 2023</small></li>
+          <li>Data stewardship in radiology<small>University of Lahore (UIRSMIT) · Jan 2022</small></li>
+          <li>Why Cervical Sonography Is Essential in Pregnancy<small>Afro-Asian Institute of Medical Sciences · Sep 2020</small></li>
+          <li>Identifying Anxiety and Stress: Impacts on Radiology Practice<small>CPD workshop · Dec 2023</small></li>
+          <li>Sustaining Radiology: Health Dynamics<small>University of Lahore · Dec 2022</small></li>
+          <li>Navigating Health Challenges in Radiology<small>Riphah International University and University of Lahore · Oct 2020</small></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Registrations and certificates</h2>
+    <div class="creds">
+      <span>HCPC: RA103288 (valid to Feb 2028)</span>
+      <span>CAHSP: PC-MT-7582-LHR-23</span>
+      <span>Enhanced DBS</span>
+      <span>BLS, British Heart Foundation</span>
+      <span>ISRRT PACS qualification</span>
+      <span>IR(ME)R 2017 and radiation protection</span>
+    </div>
+    <p style="margin-top:22px;color:var(--muted)">Copies of my certificates, CPD records and references are available on request. <a href="mailto:ibtsamkhalid5@gmail.com?subject=Certificate%20request">Email me to ask for them.</a></p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>I'm open to radiographer roles in the UK, especially ones with CT and MRI rotation.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:ibtsamkhalid5@gmail.com">ibtsamkhalid5@gmail.com</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/muhammad-ibtsam-khalid" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Muhammad Ibtsam Khalid</footer>
+
+</body>
+</html>
